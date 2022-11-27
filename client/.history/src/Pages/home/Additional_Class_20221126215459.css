@@ -1,0 +1,156 @@
+.main-banner-picture{
+    width: 100%;
+    height: 100%;
+}
+.sub-banner-picture{
+    width:100%;
+    height:300px;
+    box-sizing: border-box;
+    padding:5px;
+}
+.main-banner-button{
+    font-size: 40px;
+    display: inline-block;
+    z-index:2;
+    color: white;
+    height:80px;
+    opacity: 0.2;
+    border-radius: 3px;
+    user-select: none; /* 去除快速點擊時產生的藍色背景 可以不使用試驗看看 快速點擊上一個按鈕 細節!!!*/
+}
+.main-banner-button:hover{
+    color:rgb(230, 32, 32);
+    background-color:rgba(248, 244, 244, 0.3);
+    opacity: 1;
+}
+.market-price{
+    display:inline-block;
+    text-decoration: line-through;
+    color: #6d6f6f;
+}
+.special-price{
+    display:inline-block;
+    font-size: 24px;
+    margin:10px;
+}
+.productbotton{
+    margin-right: 30px;
+    display:inline-block;
+    font-size: 16px;
+    width:170px;
+    height:40px;
+    background:#b90b26;
+    color: aliceblue;
+    border-radius: 10px;
+}
+.productbotton:hover{
+    background:red;
+}
+.producttitle{
+    font-size: 28px;
+    font-weight:500;
+}
+.producttitleicon{
+    width:50px;
+}
+.display{
+    opacity:1;
+    font-size:80px;
+    transform:scale(0.8,0.8);
+    color: aliceblue;
+    transition: transform 0.4s ease-out;
+}
+.hide{
+    position: absolute;
+    opacity:0;
+    left: 100%;
+    transform:scaleY(0);
+    color: aliceblue;
+    font-size:80px;
+    transition: transform 0.4s ease-out;
+}
+.display2{
+    opacity:1;
+    font-size:80px;
+    color: aliceblue;
+    transform:scale(0.7,0.7);
+    transition: transform 0.4s ease-out;
+}
+.hide2{
+    position: absolute;
+    opacity:0;
+    left: 100%;
+    color: aliceblue;
+    transform:scaleY(1.8);
+    font-size:80px;
+    transition: transform 0.4s ease-out;
+}
+.BsChevronCompactUpHide{
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    font-size: 60px;
+    opacity:0;
+    transition: all 0.2s ease-out;
+}
+.BsChevronCompactUp{
+    position: fixed;
+    right: 30px;
+    bottom: 145px;
+    font-size: 60px;
+    color: aqua;
+    transition: all  0.2s ease-out;
+
+}
+.BsChevronCompactDownHide{
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    font-size: 60px;
+    opacity:0;
+    transition: all 0.2s ease-out;
+}
+.BsChevronCompactDown{
+    position: fixed;
+    right: 30px;
+    bottom: 15px;
+    font-size: 60px;
+    color: aqua;
+    transition: all 0.2s ease-out;
+}
+.BsChevronCompactDown:hover{
+    color:#06C
+}
+.BsChevronCompactUp:hover{
+    color:#06C
+}
+.CommodityBrand{
+    scroll-margin-top: 60px;
+}
+.boss-text-enter{
+    opacity: 0;
+}
+.boss-text-enter-active{
+    opacity: 1;
+    margin-top:20px !important;
+    transition: all 1000ms;
+
+}
+.boss-text-enter-done{
+    margin-top:20px !important;
+    opacity: 1;
+}
+.boss-text-exit{
+    margin-top:20px;
+    opacity: 0;
+}
+.boss-text-exit-active{
+    margin-top:0px;
+    opacity: 1;
+    transition: all 1000ms;
+
+}
+.boss-text-exit-done{
+    margin-top:0px;
+    opacity: 0.5;
+}

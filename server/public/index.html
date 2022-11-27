@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    姓名:<input type="text" id="username"><br>
+    電話:<input type="text" id="phonenumber"><br>
+    <input type="button"  id="btn"  value="送出">
+    <script>
+      document.querySelector("#btn").addEventListener("click",()=>{
+        var username=document.querySelector("#username").value;
+        var phonenumber=document.querySelector("#phonenumber").value;
+        var xhr= new XMLHttpRequest();
+        xhr.open("GET","/sendForm?username="+username+"&phonenumber="+phonenumber);
+        xhr.send();
+        alert("資料已經送出")
+      })
+    </script>
+</body>
+</html>

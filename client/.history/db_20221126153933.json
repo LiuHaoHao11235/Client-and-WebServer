@@ -1,0 +1,646 @@
+{
+  "TOP_phones": [
+    {
+      "TOP": 1,
+      "title": "IPHONE14 PRO MAX",
+      "brand": "Apple",
+      "phonetype":"iphone"
+    }
+    ,
+    {
+      "TOP": 2,
+      "title": "IPHONE13 PRO MAX",
+      "brand": "Apple"
+    }
+    ,
+    {
+      "TOP": 3,
+      "title": "IPHONE12 PRO MAX",
+      "brand": "Apple"
+    }
+    ,
+    {
+      "TOP": 4,
+      "title": "IPHONE14",
+      "brand": "Apple"
+    }
+    ,
+    {
+      "TOP": 5,
+      "title": "IPHONE13",
+      "brand": "Apple"
+    }
+    ,
+    {
+      "TOP": 1,
+      "title": "GALAXY S22 ULTRA",
+      "brand": "SAMSUNG"
+    }
+    ,
+    {
+      "id": 2,
+      "title": "Pixel 6",
+      "brand": "Google"
+    }
+    ,
+    {
+      "TOP": 3,
+      "title": "Mi 11",
+      "brand": "Xiaomi"
+    }
+    ,
+    {
+      "TOP": 4,
+      "title": "ONEPLUS 10 PRO",
+      "brand": "ONEPLUS"
+    }
+    ,
+    {
+      "TOP": 5,
+      "title": "GALAXY NOTE 20",
+      "brand": "SAMSUNG"
+    }
+  ],
+  
+  "commodity": [
+    {
+      "brand": "apple"
+    },
+  {
+    "producttitle": "Apple iPhone 14 128G",
+    "productseries":"Apple iPhone 14",
+    "marketprice":"$27,900",
+    "specialprice":"$25,990",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 256G",
+    "productseries":"Apple iPhone 14",
+    "marketprice":"$31,400",
+    "specialprice":"$28,800",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 512G",
+    "productseries":"Apple iPhone 14",
+    "marketprice":"$38,400",
+    "specialprice":"$33,300",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Plus 128G",
+    "productseries":"Apple iPhone 14 Plus",
+    "marketprice":"$31,900",
+    "specialprice":"$29,990",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Plus 256G",
+    "productseries":"Apple iPhone 14 Plus",
+    "marketprice":"$35,400",
+    "specialprice":"$33,300",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Apple iPhone 14 Plus 512G",
+    "productseries":"Apple iPhone 14 Plus",
+    "marketprice":"$42,400",
+    "specialprice":"$39,990",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Apple iPhone 14 Pro 128G",
+    "productseries":"Apple iPhone 14 Pro",
+    "marketprice":"$34,900",
+    "specialprice":"$34,990",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Apple iPhone 14 Pro 256G",
+    "productseries":"Apple iPhone 14 Pro",
+    "marketprice":"$38,400",
+    "specialprice":"$38,400",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Pro 512G",
+    "productseries":"Apple iPhone 14 Pro",
+    "marketprice":"$45,400",
+    "specialprice":"$45,400",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Pro 1TB",
+    "productseries":"Apple iPhone 14 Pro",
+    "marketprice":"$52,400",
+    "specialprice":"$52,400",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Pro Max 128G",
+    "productseries":"Apple iPhone 14 Pro Max",
+    "marketprice":"$38,900",
+    "specialprice":"$38,900",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Pro Max 256G",
+    "productseries":"Apple iPhone 14 Pro Max",
+    "marketprice":"$42,400",
+    "specialprice":"$42,400",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Apple iPhone 14 Pro Max 512G",
+    "productseries":"Apple iPhone 14 Pro Max",
+    "marketprice":"$49,400",
+    "specialprice":"$49,400",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "Apple iPhone 14 Pro Max 1TB",
+    "productseries":"Apple iPhone 14 Pro Max",
+    "marketprice":"$56,400",
+    "specialprice":"$56,400",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "brand": "asus"
+
+  },
+  {
+    "producttitle": "ASUS Zenfone 8 8G/128G",
+    "productseries":"ASUS Zenfone 8",
+    "marketprice":"$18,990",
+    "specialprice":"$11,500",
+    "producttitleicon":"true",
+    "productinfoicon":"bestcp"
+  },
+  {
+    "producttitle": "ASUS Zenfone 8 8G/256G",
+    "productseries":"ASUS Zenfone 8",
+    "marketprice":"$21,990",
+    "specialprice":"特價中",
+    "producttitleicon":"true",
+    "productinfoicon":"bestcp"
+  },
+  {
+    "producttitle": "ASUS Zenfone 9 8G/128G",
+    "productseries":"ASUS Zenfone 9",
+    "marketprice":"$19,990",
+    "specialprice":"特價中",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "ASUS Zenfone 9 8G/256G",
+    "productseries":"ASUS Zenfone 9",
+    "marketprice":"$25,990",
+    "specialprice":"特價中",
+    "producttitleicon":"true"
+  },
+  {
+    "producttitle": "ASUS Zenfone 8 Flip 8G/128G",
+    "productseries":"ASUS Zenfone 8-Flip",
+    "marketprice":"$35,400",
+    "specialprice":"$13,800",
+    "producttitleicon":"true",
+    "productinfoicon":"bestcp"
+  }
+  ,
+  {
+    "producttitle": "ASUS Zenfone 8 Flip 8G/256G",
+    "productseries":"ASUS Zenfone 8-Flip",
+    "marketprice":"$23,990",
+    "specialprice":"$15,990",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "ASUS ROG Phone 6 16G/512G",
+    "productseries":"ASUS ROG Phone 6",
+    "marketprice":"$33,900",
+    "specialprice":"特價中",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "ASUS ROG Phone 6D 16G/256G",
+    "productseries":"ASUS ROG Phone 6D",
+    "marketprice":"$29,990",
+    "specialprice":"$28,500",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "ASUS ROG Phone 6D Ultimate 16G/512G",
+    "productseries":"ASUS ROG Phone 6D-Ultimate",
+    "marketprice":"$37,990",
+    "specialprice":"$36,500",
+    "producttitleicon":"true"
+  }
+  
+]
+,
+"commodity1":
+[
+  {
+    "brand":"samsung"
+  }
+  ,
+  {
+    "producttitle": "SAMSUNG Z Flip4 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+    {
+    "producttitle": "SAMSUNG Z Flip4 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "SAMSUNG Z Fold4 12G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "SAMSUNG Z Fold4 12G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "SAMSUNG M33 6G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung XCover6 Pro 6G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A13 4G/64G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A13 4G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A23 5G 4G/64G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A23 5G 6G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A33 6G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A33 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A53 8G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung A53 8G/256G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S21 FE 8G/256G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S22 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S22 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S22+ 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S22 Ultra 12G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung S22 Ultra 12G/512G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab A7 Lite 3G/32G WiFi+行動網路《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab A7 Lite 4G/64G WiFi",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab A8 3G/32G WiFi",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab A8 4G/64G WiFi《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab A8 3G/32G WiFi+行動網路",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab S6 Lite 2022 4G/64G WiFi《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab S6 Lite 2022 4G/64G LTE",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+  ,
+  {
+    "producttitle": "Samsung Tab S7 FE 4G/64G WiFi《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"false"
+  }
+]
+,
+"commodity2":
+[
+  {
+    "brand":"mi",
+    "index":"3"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 10C 4G/64G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+    {
+    "producttitle": "小米 紅米 10 4G/128G 2022",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 10 5G 4G/128G 2022",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 Note 11S 5G 6G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 Note 11 Pro 5G 6G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 Note 11 Pro 5G 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 紅米 Note 11 Pro+ 5G 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 小米 12X 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 小米 12 12G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 小米 12T 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "小米 小米 12T Pro 12G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "brand":"google"
+  }
+  ,
+  {
+    "producttitle": "Google Pixel 6a 6G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+    {
+    "producttitle": "Google Pixel 6 Pro 12G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Google Pixel 7 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Google Pixel 7 8G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Google Pixel 7 Pro 12G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "Google Pixel 7 Pro 12G/256G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "brand":"oppo"
+  }
+  ,
+  {
+    "producttitle": "OPPO A57 4G/64G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+    {
+    "producttitle": "OPPO A77 4G/64G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO A77 6G/128G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO Reno7 Pro 12G/256G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO Reno8 8G/256G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO Reno8 Z 8G/128G",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO Find X5 Pro 12G/256G《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+  ,
+  {
+    "producttitle": "OPPO Pad Air 4G/64G WiFi《可網購》",
+    "marketprice":"$30,888",
+    "specialprice":"$32,888",
+    "producttitleicon":"true"
+  }
+ 
+]
+
+
+}
+

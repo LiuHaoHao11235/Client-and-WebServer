@@ -1,0 +1,141 @@
+
+.Navicon-box{
+    color:black;
+    margin-right: 10px;
+    padding-bottom: 3px;
+    pointer-events: none;
+}
+.Navicon-coin{
+  color:orangered;
+  margin-right: 10px;
+  padding-bottom: 3px;
+  pointer-events: none;
+}
+.Navicon-phone{
+  color:black;
+  margin-right: 10px;
+  padding-bottom: 3px;
+  pointer-events: none;
+}
+.Navicon-about{
+  color:rgb(4, 4, 165);
+  margin-right: 10px;
+  padding-bottom: 3px;
+  pointer-events: none;
+}
+.Navicon-notion{
+  color:rgb(10, 27, 184);
+  margin-right: 10px;
+  padding-bottom: 3px;
+  pointer-events: none;
+}
+.Navicon-rank{
+  color:gold;
+  margin-right: 10px;
+  padding-bottom: 3px;
+  pointer-events: none;
+}
+.search {
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    padding: 8px;
+    right: 5px;
+    top:11px;
+    background: #B1B1B1;
+    border-radius: 8px;
+  }
+  .onfocusSearch {
+    height: 22px;
+    position: absolute;
+    right: 5px;
+    width: 22px;
+    top:11px;
+    padding: 8px;
+    background: red;
+    border-radius: 8px;
+  }
+  .usericon{
+    height: 30px;
+    width: 30px;
+    margin-right:5px;
+  }
+.slide-enter {
+    transition: all 0.5s ease-out;
+  }
+
+.slide-exit {
+    transition: all 0.5s ease-out;
+  }
+.slideIcon-enter {
+    transition: all 0.5s ease-out;
+  }
+.slideIcon-exit {
+    transition: all 0.5s ease-out;
+  }
+.searchinfoTitle{
+  font-size: 18px;
+  display: inline-block;
+  font-weight: 700;
+}
+.StarLightUp{
+  color: rgb(231, 235, 11);
+}
+.StarLightDown{
+  color:white;
+}
+.NavSearch{
+  font-size: 18px;
+  margin-left: 0px;
+  width: 140px;
+  border: 2px #eceaee solid;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  }
+.NavSearch_onfocus {
+  font-size: 18px;
+  margin-left: 0px;
+  border: 2px #eceaee solid;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 300px;
+}
+.label{
+  margin-bottom:30px;
+}
+.iphone{
+  color: grey;
+  transition:all 0.5s ease-in;
+  width: 40px;
+  position: absolute;
+  right:80px;
+}
+.android{
+  color: grey;
+  width: 40px;
+  transition:all 0.5s ease-in;
+  transform: rotate(-180deg);
+  position: absolute;
+  right:80px;
+}
+.appleicon{
+  font-size: 20px;
+  position: absolute;
+  left:80px;
+  top:20px
+}
+.androidicon{
+  color: darkgreen;
+  font-size: 18px;
+  position: absolute;
+  left:80px;
+  top:21px
+}
+.reloadword{
+  color: grey;
+  font-size: 12px;
+  display: inline-block;
+  margin-right:10px;
+}
