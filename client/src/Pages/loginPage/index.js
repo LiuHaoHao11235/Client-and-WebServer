@@ -7,12 +7,34 @@ import {
   RememberSection,
 } from "./style.js";
 import { Link } from "react-router-dom";
+import auth from "../auth.js";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const LoginPage = (props) => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  async function postForm(Form_Data) {
+    let response;
+    await axios
+      .post("http://localhost:8000/users/login", Form_Data)
+      .then(() => {
+        response = true;
+      })
+      .catch((error) => console.error(error));
+
+    if (response) {
+      auth.login(() => {
+        navigate("/admin");
+      });
+    } else {
+      navigate("/login");
+    }
+  }
+  const navigate = useNavigate();
+  const onFinish = (Form_Data) => {
+    console.log("格式驗證成功", Form_Data);
+    postForm(Form_Data);
   };
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log("格式驗證失敗");
   };
   const customVerify = (rule, value, callback) => {
     if (value.length === 0) {
@@ -23,6 +45,7 @@ const LoginPage = (props) => {
       return Promise.resolve();
     }
   };
+
   return (
     <LoginWrapper>
       <LoginSection>
@@ -74,13 +97,7 @@ const LoginPage = (props) => {
             </Link>
           </RememberSection>
           <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
-            <LoginSubmit
-              onClick={() => {
-                console.log(1111);
-              }}
-            >
-              登入
-            </LoginSubmit>
+            <LoginSubmit>登入</LoginSubmit>
           </Form.Item>
         </Form>
       </LoginSection>

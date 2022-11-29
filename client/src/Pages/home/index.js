@@ -291,7 +291,7 @@ const mapDispatchToProps = (dispatch) => {
       const action = function (dispatch) {
         //!因為thunk讓我可以action可以是function型態
         axios
-          .get(`http://localhost:8000/commodity`)
+          .get(`http://localhost:8000/users/commodity`)
           .then((res) =>
             dispatch({
               type: "LOAD_COMMODITY_SUCCESS",
@@ -311,7 +311,7 @@ const mapDispatchToProps = (dispatch) => {
       const action = function (dispatch) {
         //!因為thunk讓我可以action可以是function型態
         axios
-          .get(`http://localhost:8000/commodity?page=${page}`)
+          .get(`http://localhost:8000/users/commodity?page=${page}`)
           .then((res) =>
             dispatch({
               type: "load_more_commodity",

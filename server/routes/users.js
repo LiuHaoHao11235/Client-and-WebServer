@@ -1,7 +1,11 @@
 var express = require("express");
 var router = express.Router();
 const controller = require("../controller/UserController");
+router.use(express.json());
 router.get("/", controller.sentmeassge);
 router.get("/commodity", controller.get_commodity);
 router.get("/TOP_phones", controller.get_topphone);
+router.post("/login", controller.post_login);
+router.get("/login", controller.get_login);
+router.post("/register", controller.post_register);
 module.exports = router;
