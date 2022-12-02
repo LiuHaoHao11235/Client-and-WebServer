@@ -10,26 +10,26 @@ import { Link } from "react-router-dom";
 import auth from "../auth.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useLocalStorage } from "../useLocalStorage.js";
+import { useSessionStorage } from "../useSessionStorage.js";
 const LoginPage = (props) => {
-  const { value: initUsername, setValue: setUsername } = useLocalStorage(
+  const { value: initUsername, setValue: setUsername } = useSessionStorage(
     "username",
     ""
   );
-  const { value: initPassword, setValue: setPassowrd } = useLocalStorage(
+  const { value: initPassword, setValue: setPassowrd } = useSessionStorage(
     "password",
     ""
   );
   async function postForm(Form_Data) {
-    let response;
+    let isLogin = false;
     await axios
       .post("http://localhost:8000/users/login", Form_Data)
       .then(() => {
-        response = true;
+        isLogin = true;
       })
       .catch((error) => console.error(error));
 
-    if (response) {
+    if (isLogin) {
       auth.login(() => {
         navigate("/admin");
       });
