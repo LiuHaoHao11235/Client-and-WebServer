@@ -10,7 +10,16 @@ import { Link } from "react-router-dom";
 import auth from "../auth.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useLocalStorage } from "../useLocalStorage.js";
 const LoginPage = (props) => {
+  const { value: initUsername, setValue: setUsername } = useLocalStorage(
+    "username",
+    ""
+  );
+  const { value: initPassword, setValue: setPassowrd } = useLocalStorage(
+    "password",
+    ""
+  );
   async function postForm(Form_Data) {
     let response;
     await axios
@@ -63,22 +72,34 @@ const LoginPage = (props) => {
             label="用戶帳號"
             name="username"
             size="large"
+            initialValue={initUsername}
             //!自定義驗證
             rules={[{ validator: customVerify }]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} />
+            <Input
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+              prefix={<UserOutlined className="site-form-item-icon" />}
+            />
           </Form.Item>
           <Form.Item
             label="用戶密碼"
             size="large"
             name="password"
+            initialValue={initPassword}
             //!聲明式驗證 直接使用別人定義的規格
             rules={[
               { required: true, message: "密碼不可為空" },
               { max: 12, message: "密碼最多為12碼" },
             ]}
           >
-            <Input prefix={<LockOutlined className="site-form-item-icon" />} />
+            <Input
+              onChange={(e) => {
+                setPassowrd(e.target.value);
+              }}
+              prefix={<LockOutlined className="site-form-item-icon" />}
+            />
           </Form.Item>
           <RememberSection>
             <Form.Item
