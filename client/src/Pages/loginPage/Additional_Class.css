@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    justify-content: flex-start;
+    height: 64px;
+    width:100%;
+    background: brown !important;
+}
+.content{
+    position: relative;
+    height: 750px;
+    width: 100%;
+    background-color: white;
+}

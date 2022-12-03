@@ -13,7 +13,6 @@ import JumpButton from "./component/JumpButton";
 import Slider from "./component/Slider";
 import LoadmoreIcon from "./component/LoadmoreIcon";
 import axios from "axios";
-import Header from "../../Common/Header";
 import Button from "../../Common/Button/index";
 import { connect } from "react-redux"; //TODO:使header組件連接store
 import { HiFire } from "react-icons/hi";
@@ -53,7 +52,6 @@ class Home extends Component {
     }
     return (
       <Fragment>
-        <Header></Header>
         <HomeWrapper>
           <Slider></Slider>
           <MainInfoSection>

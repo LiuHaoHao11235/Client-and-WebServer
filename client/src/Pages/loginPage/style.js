@@ -2,7 +2,7 @@ import styled from "styled-components";
 import loginBackground from "../../Statices/background.png";
 export const LoginWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 760px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,4 +35,9 @@ export const RememberSection = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+`;
+export const FooterItem = styled.div`
+  width: 150px;
+  height: 100%;
+  background-color: white;
 `;

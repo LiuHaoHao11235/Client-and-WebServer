@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Globalstyle } from "./Global_Reset_Stlye.js";
 import { Provider } from "react-redux"; //!使provider包覆的組件有辦法使用store 非常重要
 import store from "./store/index";
+import Header from "./Common/Header";
 import { ProtectedRoute } from "./Pages/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 const Home = lazy(() => import("./Pages/home/index.js"));
@@ -13,6 +14,7 @@ function App() {
       <Globalstyle></Globalstyle>
       <Provider store={store}>
         <BrowserRouter>
+          <Header></Header>
           <Suspense fallback={<h1>LAZY LOADING....</h1>}>
             <Routes>
               <Route exact path="/" element={<Home></Home>}></Route>

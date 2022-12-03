@@ -4,11 +4,11 @@ class Auth {
   }
   login(callback) {
     this.authenticated = true;
-    callback();
+    callback && callback();
   }
   logout(callback) {
     this.authenticated = false;
-    callback();
+    callback && callback();
   }
   isAuthenticated() {
     return this.authenticated;

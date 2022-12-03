@@ -40,7 +40,8 @@ export const RedirectPage = (props) => {
         bordered={false}
         style={{
           width: "100%",
-          fontSize: "18px",
+          fontSize: "16px",
+          fontWeight: "600",
         }}
       >
         <h1>
