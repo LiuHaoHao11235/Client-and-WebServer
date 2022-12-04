@@ -16,6 +16,13 @@ const Card = () => {
   return (
     <CardBody>
       {
+        <button
+          onClick={() => {
+            sessionStorage.removeItem("username");
+            sessionStorage.removeItem("password");
+          }}
+        ></button>
+
         // <div key={users[0].userID}>
         //   <h1>costum hook</h1>
         //   <h3>this is {users[0].userID}</h3>

@@ -6,14 +6,15 @@ import {
   LoginSection,
   LoginSubmit,
   RememberSection,
-  FooterItem,
 } from "./style.js";
 import { Link } from "react-router-dom";
-import auth from "../auth.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSessionStorage } from "../useSessionStorage.js";
+import AuthContext from "../auth.js";
+import { useContext } from "react";
 const LoginPage = (props) => {
+  const Auth = useContext(AuthContext);
   const { Content, Footer } = Layout;
   const { value: initUsername, setValue: setUsername } = useSessionStorage(
     "username",
@@ -33,7 +34,9 @@ const LoginPage = (props) => {
       .catch((error) => console.error(error));
 
     if (isLogin) {
-      auth.login(() => {
+      Auth.login(() => {
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("password");
         navigate("/admin");
       });
     } else {

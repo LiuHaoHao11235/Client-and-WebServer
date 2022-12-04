@@ -41,6 +41,7 @@ const LoadmoreIcon = (props) => {
             title="加載更多"
           ></BsChevronDoubleDown>
         </CSSTransition>
+        <div style={{ borderBottom: "2px red solid" }}></div>
       </div>
     );
   }
