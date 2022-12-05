@@ -8,7 +8,6 @@ export const RedirectPage = (props) => {
   useEffect(() => {
     console.log("set interval");
     const interval = setInterval(() => {
-      console.log(11111);
       setDelayTime((delayTime) => delayTime - 1000);
     }, 1000);
     return () => {
@@ -19,7 +18,7 @@ export const RedirectPage = (props) => {
   useEffect(() => {
     if (delayTime === 0) {
       console.log("跳轉");
-      navigate("/login");
+      navigate("/users");
     }
   }, [navigate, delayTime]); //!不使用hook方式會跳警告
   return (

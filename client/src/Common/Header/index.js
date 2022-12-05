@@ -228,7 +228,7 @@ class Header extends Component {
               onClick={this.state.handlestarclick}
             ></BsFillStarFill>
           </Stargrouper> */}
-            <Link to={"login"}>
+            <Link to="users">
               <NavUser>
                 <Navitem className="user_title">
                   <HiUserCircle className="usericon"></HiUserCircle>

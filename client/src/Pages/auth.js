@@ -9,7 +9,6 @@ const AuthContext = React.createContext({
 
 export const AuthContextProvider = (props) => {
   const [authenticated, setAuthenticated] = useState(false);
-
   const login = (callback) => {
     setAuthenticated(true);
     callback && callback();

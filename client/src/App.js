@@ -20,14 +20,17 @@ function App() {
           <Suspense fallback={<h1>LAZY LOADING....</h1>}>
             <AuthContextProvider>
               <Routes>
-                <Route exact path="/" element={<Home></Home>}></Route>
+                <Route exact path="/*" element={<Home></Home>}></Route>
                 <Route
                   path="detail/:phoneID"
                   element={<Detail></Detail>}
                 ></Route>
-                <Route path="login" element={<LoginPage></LoginPage>}></Route>
                 <Route
-                  path="admin"
+                  path="/users/*"
+                  element={<LoginPage></LoginPage>}
+                ></Route>
+                <Route
+                  path="admin/"
                   element={
                     <ProtectedRoute>
                       <AdminPage></AdminPage>

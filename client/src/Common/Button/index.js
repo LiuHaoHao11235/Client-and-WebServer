@@ -62,7 +62,7 @@ const Stylebutton = styled.button`
   }
 `;
 const Button = (props) => {
-  console.log("Button render");
+  //console.log("Button render");
   const [loadState, setLoadState] = useState({
     isloading: false,
   });
