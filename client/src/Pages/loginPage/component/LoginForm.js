@@ -14,7 +14,7 @@ import { useSessionStorage } from "../../useSessionStorage.js";
 import AuthContext from "../../auth";
 import { useContext } from "react";
 const LoginForm = () => {
-  console.log("render LoginForm");
+  // console.log("render LoginForm");
   const Auth = useContext(AuthContext);
   const { value: initUsername, setValue: setUsername } = useSessionStorage(
     "username",

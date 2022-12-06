@@ -1,21 +1,33 @@
 import React, { useState } from "react";
-
+import { useSessionStorage } from "./useSessionStorage.js";
 const AuthContext = React.createContext({
-  authenticated: false,
+  initAuthenticated: false,
   login: () => {},
   logout: () => {},
   isAuthenticated: () => {},
 });
-
 export const AuthContextProvider = (props) => {
-  const [authenticated, setAuthenticated] = useState(false);
+  const initAuthenticated = () => {
+    if (JSON.parse(sessionStorage.getItem("initAuthenticated")) !== null) {
+      return true;
+    }
+    return false;
+  };
+
+  const [authenticated, setAuthenticated] = useState(initAuthenticated());
+  const { setValue: setInitAuthenticated } = useSessionStorage(
+    "initAuthenticated",
+    ""
+  );
   const login = (callback) => {
     setAuthenticated(true);
+    setInitAuthenticated(true);
     callback && callback();
   };
 
   const logout = (callback) => {
     setAuthenticated(false);
+    setInitAuthenticated(false);
     callback && callback();
   };
   const isAuthenticated = () => {

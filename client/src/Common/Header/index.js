@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AuthContext from "../../Pages/auth";
 import "./Additional_Class.css";
 import { connect } from "react-redux"; //TODO:使header組件連接store
 import {
@@ -26,8 +27,10 @@ import {
   NavUser,
   Navitemaddtional,
   Additionlink,
+  UserAvatar,
 } from "./style.js";
 class Header extends Component {
+  static contextType = AuthContext;
   constructor(state) {
     super(state);
     this.state = {
@@ -44,6 +47,7 @@ class Header extends Component {
     this.handlemouseleave = this.handlemouseleave.bind(this);
   }
   render() {
+    console.log(this.context.isAuthenticated());
     return (
       <Headersection>
         <HeaderWrapper>
@@ -201,37 +205,14 @@ class Header extends Component {
                 ></ShowSearchInfo>
               </label>
             </Searchsection>
-            {/* <Stargrouper>
-            <BsFillStarFill
-              id="1"
-              className={this.state.star >= 1 ? "StarLightUp" : "StarLightDown"}
-              onClick={this.state.handlestarclick}
-            ></BsFillStarFill>
-            <BsFillStarFill
-              id="2"
-              className={this.state.star >= 2 ? "StarLightUp" : "StarLightDown"}
-              onClick={this.state.handlestarclick}
-            ></BsFillStarFill>
-            <BsFillStarFill
-              id="3"
-              className={this.state.star >= 3 ? "StarLightUp" : "StarLightDown"}
-              onClick={this.state.handlestarclick}
-            ></BsFillStarFill>
-            <BsFillStarFill
-              id="4"
-              className={this.state.star >= 4 ? "StarLightUp" : "StarLightDown"}
-              onClick={this.state.handlestarclick}
-            ></BsFillStarFill>
-            <BsFillStarFill
-              id="5"
-              className={this.state.star >= 5 ? "StarLightUp" : "StarLightDown"}
-              onClick={this.state.handlestarclick}
-            ></BsFillStarFill>
-          </Stargrouper> */}
             <Link to="users">
               <NavUser>
                 <Navitem className="user_title">
-                  <HiUserCircle className="usericon"></HiUserCircle>
+                  {this.context.isAuthenticated() ? (
+                    <UserAvatar></UserAvatar>
+                  ) : (
+                    <HiUserCircle className="usericon"></HiUserCircle>
+                  )}
                   會員中心
                 </Navitem>
               </NavUser>
@@ -295,26 +276,6 @@ const mapStateTostate = (state) => {
 };
 const mapDispatchTostate = (dispatch) => {
   return {
-    // handlestarclick(e) {
-    //   if (e.target.nearestViewportElement) {
-    //     //console.log("星星本身");
-    //     //?有兩層e.target.nearestViewportElement為星星本身 e.target為星星外邊避免報錯或是點了星星的邊角沒反應
-    //     const star = parseInt(e.target.nearestViewportElement.id);
-    //     const action = {
-    //       type: "click_star",
-    //       star: star,
-    //     };
-    //     dispatch(action);
-    //   } else {
-    //     //console.log("星星邊邊");
-    //     const star = parseInt(e.target.id);
-    //     const action = {
-    //       type: "click_star",
-    //       star: star,
-    //     };
-    //     dispatch(action);
-    //   }
-    // },
     handle_reload_android() {
       const action = {
         type: "reload_phone",

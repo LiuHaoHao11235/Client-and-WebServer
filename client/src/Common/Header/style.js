@@ -154,3 +154,16 @@ export const Additionlink = styled.a`
     background-color: #969696;
   }
 `;
+export const UserAvatar = styled.div`
+  display: block;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background: url(${logo});
+  background-size: contain;
+  margin-right: 5px;
+  &:hover {
+    color: white;
+    background-color: #969696;
+  }
+`;

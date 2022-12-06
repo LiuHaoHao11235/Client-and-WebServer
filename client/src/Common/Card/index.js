@@ -20,8 +20,11 @@ const Card = () => {
           onClick={() => {
             sessionStorage.removeItem("username");
             sessionStorage.removeItem("password");
+            sessionStorage.removeItem("initAuthenticated");
           }}
-        ></button>
+        >
+          清除所有sessionStorage;
+        </button>
 
         // <div key={users[0].userID}>
         //   <h1>costum hook</h1>

@@ -16,9 +16,9 @@ function App() {
       <Globalstyle></Globalstyle>
       <Provider store={store}>
         <BrowserRouter>
-          <Header></Header>
-          <Suspense fallback={<h1>LAZY LOADING....</h1>}>
-            <AuthContextProvider>
+          <AuthContextProvider>
+            <Header></Header>
+            <Suspense fallback={<h1>LAZY LOADING....</h1>}>
               <Routes>
                 <Route exact path="/*" element={<Home></Home>}></Route>
                 <Route
@@ -46,8 +46,8 @@ function App() {
                 }
               ></Route> */}
               </Routes>
-            </AuthContextProvider>
-          </Suspense>
+            </Suspense>
+          </AuthContextProvider>
         </BrowserRouter>
       </Provider>
     </div>

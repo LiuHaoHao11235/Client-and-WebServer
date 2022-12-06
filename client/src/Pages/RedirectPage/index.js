@@ -6,18 +6,18 @@ export const RedirectPage = (props) => {
   const { delay, title } = props;
   const [delayTime, setDelayTime] = useState(delay);
   useEffect(() => {
-    console.log("set interval");
+    // console.log("set interval");
     const interval = setInterval(() => {
       setDelayTime((delayTime) => delayTime - 1000);
     }, 1000);
     return () => {
       clearInterval(interval);
-      console.log("clear interval");
+      // console.log("clear interval");
     };
   }, []);
   useEffect(() => {
     if (delayTime === 0) {
-      console.log("跳轉");
+      // console.log("跳轉");
       navigate("/users");
     }
   }, [navigate, delayTime]); //!不使用hook方式會跳警告
