@@ -25,6 +25,7 @@ function App() {
                   path="detail/:phoneID"
                   element={<Detail></Detail>}
                 ></Route>
+                <Route path="detail" element={<Detail></Detail>}></Route>
                 <Route
                   path="/users/*"
                   element={<LoginPage></LoginPage>}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import logo from "../../Statices/logo123.png";
+import { HiShoppingCart } from "react-icons/hi";
 export const Headersection = styled.div`
   height: 60px;
   background: #00a0e9;
@@ -47,17 +48,13 @@ export const Navitem = styled.div`
   color: white;
   position: relative;
   cursor: pointer;
-  &.user_title {
-    width: 160px;
-    color: black;
-  }
   &:hover {
     background-color: lightblue;
     color: black;
   }
 `;
 export const NavUser = styled.div`
-  width: 200px;
+  width: 220px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -167,3 +164,37 @@ export const UserAvatar = styled.div`
     background-color: #969696;
   }
 `;
+export const StyleCart = styled.div`
+  font-size: 35px;
+  color: white;
+  &:after {
+    content: attr(value);
+    font-size: 16px;
+    color: #fff;
+    background: red;
+    border-radius: 50%;
+    padding: 0 5px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    opacity: 0.9;
+    background-color: red;
+  }
+  &:hover {
+    color: lightpink;
+  }
+`;
+export const Cart = (props) => {
+  if (props.value > 0) {
+    return (
+      <StyleCart {...props}>
+        <HiShoppingCart></HiShoppingCart>
+      </StyleCart>
+    );
+  }
+  return (
+    <HiShoppingCart
+      style={{ fontSize: "35px", color: "white" }}
+    ></HiShoppingCart>
+  );
+};

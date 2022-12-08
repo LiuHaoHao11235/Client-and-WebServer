@@ -1,18 +1,19 @@
-import { useParams } from "react-router-dom";
-import { Button as AntButton, message } from "antd";
+// import { useParams } from "react-router-dom";
+import Card from "../../Common/DetailCard/DetailCard";
+import styled from "styled-components";
+const DetailWarp = styled.div`
+  width: 1920px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 const Detail = () => {
-  const { phoneID } = useParams();
+  // const { phoneID } = useParams();
   return (
-    <div>
-      <AntButton
-        type="primary"
-        onClick={() => {
-          message.success("成功囉");
-        }}
-      >
-        {phoneID}
-      </AntButton>
-    </div>
+    <DetailWarp>
+      <Card></Card>
+    </DetailWarp>
   );
 };
 

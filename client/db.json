@@ -61,6 +61,39 @@
       "brand": "SAMSUNG"
     }
   ],
+  "PhonesDetail": [
+    {
+      "phone":"APPLE IPHONE 13",
+      "texts": {
+        "T1":"上市日期:2021/09",
+        "T2":"作業系統:iOS 15",
+        "T3":"通訊類型:5G+4G",
+        "T4":"SIM卡規格:nano/雙卡",
+        "T5":"處理器:Apple A15",
+        "T6":"ROM:128G",
+        "T7":"螢幕規格:6.1 吋/Retina XDR",
+        "T8":"電池容量:3227 mAh",
+        "T9":"前相機:1200萬",
+        "T10":"後相機:1200+1200萬"
+      },
+      "picture":{
+        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
+        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
+        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
+      }
+    }
+  ],
+  "sliderPic": [
+    {
+      "pic":[
+      "https://www.jyes.com.tw/data/adv/202212/1670468541216624809.jpg",
+      "https://www.jyes.com.tw/data/adv/202212/1670465233028186150.jpg",
+      "https://www.jyes.com.tw/data/adv/202212/1670465279862829107.jpg",
+      "https://www.jyes.com.tw/data/adv/202211/1669686562316715981.jpg",
+      "https://www.jyes.com.tw/data/adv/202212/1669857524927971273.jpg"
+      ]
+    }
+  ],
   "users":[
     {
       "userID":"Liuhaohao",
@@ -661,6 +694,5 @@
   }
   
 ]
-
 }
 

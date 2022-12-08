@@ -8,15 +8,23 @@ import { ReactComponent as Samsung } from "../../Statices/samsung.svg";
 import { ReactComponent as Mi } from "../../Statices/mi.svg";
 import { ReactComponent as Google } from "../../Statices/google.svg";
 import { ReactComponent as Oppo } from "../../Statices/oppo.svg";
+import pic6 from "../../Statices/pic6.jpg";
+import pic7 from "../../Statices/pic7.jpg";
+import pic8 from "../../Statices/pic8.jpg";
+import pic9 from "../../Statices/pic9.jpg";
+import pic10 from "../../Statices/pic10.jpg";
 import { Link } from "react-router-dom";
 import JumpButton from "./component/JumpButton";
-import Slider from "./component/Slider";
+import Slider from "../../Common/Slider/Slider";
 import LoadmoreIcon from "./component/LoadmoreIcon";
 import axios from "axios";
 import Button from "../../Common/Button/index";
 import { connect } from "react-redux"; //TODO:使header組件連接store
 import { HiFire } from "react-icons/hi";
 import {
+  HomeBannerSection,
+  MainHomeBanner,
+  SubHomeBanner,
   HomeWrapper,
   MainInfoSection,
   MainCommoditySection,
@@ -53,7 +61,19 @@ class Home extends Component {
     return (
       <Fragment>
         <HomeWrapper>
-          <Slider></Slider>
+          <HomeBannerSection>
+            <MainHomeBanner>
+              <Slider></Slider>
+            </MainHomeBanner>
+            <SubHomeBanner>
+              <img src={pic6} className="sub-banner-picture" alt="pic6"></img>
+              <img src={pic7} className="sub-banner-picture" alt="pic7"></img>
+              <img src={pic8} className="sub-banner-picture" alt="pic8"></img>
+              <img src={pic9} className="sub-banner-picture" alt="pic9"></img>
+              <img src={pic10} className="sub-banner-picture" alt="pic10"></img>
+            </SubHomeBanner>
+          </HomeBannerSection>
+
           <MainInfoSection>
             <MainInfoTitle>
               <h1>熱門品牌</h1>

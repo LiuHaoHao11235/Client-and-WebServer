@@ -28,6 +28,7 @@ import {
   Navitemaddtional,
   Additionlink,
   UserAvatar,
+  Cart,
 } from "./style.js";
 class Header extends Component {
   static contextType = AuthContext;
@@ -47,7 +48,6 @@ class Header extends Component {
     this.handlemouseleave = this.handlemouseleave.bind(this);
   }
   render() {
-    console.log(this.context.isAuthenticated());
     return (
       <Headersection>
         <HeaderWrapper>
@@ -205,18 +205,17 @@ class Header extends Component {
                 ></ShowSearchInfo>
               </label>
             </Searchsection>
-            <Link to="users">
-              <NavUser>
-                <Navitem className="user_title">
-                  {this.context.isAuthenticated() ? (
-                    <UserAvatar></UserAvatar>
-                  ) : (
-                    <HiUserCircle className="usericon"></HiUserCircle>
-                  )}
-                  會員中心
-                </Navitem>
-              </NavUser>
-            </Link>
+            <NavUser>
+              <Link to="users" className="user_title">
+                {this.context.isAuthenticated() ? (
+                  <UserAvatar></UserAvatar>
+                ) : (
+                  <HiUserCircle className="usericon"></HiUserCircle>
+                )}
+                <span className="userspan">會員中心</span>
+              </Link>
+              <Cart value={1}></Cart>
+            </NavUser>
           </Nav>
         </HeaderWrapper>
       </Headersection>
