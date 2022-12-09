@@ -2,12 +2,31 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Skeleton, Space } from "antd";
+import {
+  BsFillCartPlusFill,
+  BsHandThumbsUpFill,
+  BsHandThumbsDownFill,
+} from "react-icons/bs";
+import { ColorSelctor } from "./ColorSelector";
+import { Favorite } from "./Favorite";
 const CardBody = styled.div`
   width: 1280px;
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+`;
+const CardRightSection = styled.div`
+  margin-top: 80px;
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const CardLeftSection = styled.div`
+  margin-top: 100px;
+  width: 600px;
 `;
 const CardTextSection = styled.div`
   width: 600px;
@@ -16,16 +35,35 @@ const CardTextSection = styled.div`
 `;
 const CardPictureSection = styled.div`
   width: 620px;
-  height: 650px;
+  height: 350px;
   display: flex;
-  margin-bottom: 100px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
   /* background-color: lightgreen; */
+`;
+const CardBuyerLable = styled.label`
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+`;
+const CardBuyerSection = styled.div`
+  width: 620px;
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+const CardBuyerItem = styled.div`
+  margin-top: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 const CardTextItem = styled.div`
   width: 100%;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   border-bottom: 1px #e5e5e5 solid;
   margin-top: 60px;
   text-align: center;
@@ -62,84 +100,128 @@ const useUsers = () => {
 };
 const Card = () => {
   const { users } = useUsers();
-  const array = [];
+  const arrayOfAllText = [];
   var arrayOfPrize = [];
   if (users[0]) {
     console.log(users[0]);
     Object.keys(users[0].texts).forEach(function (key) {
-      array.push(users[0].texts[key]);
+      arrayOfAllText.push(users[0].texts[key]);
     });
-    arrayOfPrize = array.slice(-4);
+    arrayOfPrize = arrayOfAllText.slice(-4);
   }
+
   return (
     <CardBody>
-      <CardTextSection>
-        <CardTextItem>
-          <TextTitle>
-            {users[0] ? (
-              users[0].phone
-            ) : (
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              ></Skeleton.Input>
-            )}
-          </TextTitle>
-        </CardTextItem>
-        <CardTextItem>
-          {array[0] ? (
-            array.map((text) => {
-              return <Text key={text}>{text}</Text>;
-            })
-          ) : (
-            <Space
-              direction="vertical"
-              size="middle"
-              style={{ display: "flex" }}
+      <CardLeftSection>
+        <CardTextSection>
+          <CardTextItem>
+            <TextTitle
+              style={{
+                borderTop: "1px #e5e5e5 solid",
+                paddingTop: "60px",
+              }}
             >
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              />
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              />
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              />
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              />
-              <Skeleton.Input
-                style={{ width: "400px" }}
-                active={true}
-                shape={"round"}
-              />
-            </Space>
+              {users[0] ? (
+                users[0].phone
+              ) : (
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                ></Skeleton.Input>
+              )}
+            </TextTitle>
+          </CardTextItem>
+          <CardTextItem>
+            {arrayOfAllText[0] ? (
+              arrayOfAllText.map((text) => {
+                return <Text key={text}>{text}</Text>;
+              })
+            ) : (
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{ display: "flex" }}
+              >
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                />
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                />
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                />
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                />
+                <Skeleton.Input
+                  style={{ width: "400px" }}
+                  active={true}
+                  shape={"round"}
+                />
+              </Space>
+            )}
+          </CardTextItem>
+          <CardTextItem style={{ display: "flex", flexDirection: "column" }}>
+            {arrayOfPrize.map((text, index) => {
+              return <Text key={index}>{text}</Text>;
+            })}
+          </CardTextItem>
+        </CardTextSection>
+      </CardLeftSection>
+      <CardRightSection>
+        <CardPictureSection>
+          {users[0] ? (
+            <img
+              style={{ width: "100%" }}
+              src={users[0].picture.white1}
+              alt="phone1"
+            ></img>
+          ) : (
+            <Skeleton.Image active={true} />
           )}
-        </CardTextItem>
-        <CardTextItem style={{ display: "flex", flexDirection: "column" }}>
-          {arrayOfPrize.map((text) => {
-            return <Text>{text}</Text>;
-          })}
-        </CardTextItem>
-      </CardTextSection>
-      <CardPictureSection>
-        {users[0] ? (
-          <img style={{ width: "100%" }} src={users[0].picture.white1}></img>
-        ) : (
-          <Skeleton.Image active={true} />
-        )}
-      </CardPictureSection>
+        </CardPictureSection>
+        <CardBuyerSection>
+          <CardBuyerItem>
+            <CardBuyerLable htmlFor="BsFillCartPlusFill">
+              加入購物車
+            </CardBuyerLable>
+            <BsFillCartPlusFill
+              id="BsFillCartPlusFill"
+              style={{ fontSize: "40px" }}
+            ></BsFillCartPlusFill>
+          </CardBuyerItem>
+          <CardBuyerItem>
+            <CardBuyerLable htmlFor="Favorite">加入最愛</CardBuyerLable>
+            <Favorite id="Favorite"></Favorite>
+          </CardBuyerItem>
+          <CardBuyerItem>
+            <CardBuyerLable htmlFor="ColorSelctor">選擇顏色</CardBuyerLable>
+            <ColorSelctor id="ColorSelctor"></ColorSelctor>
+          </CardBuyerItem>
+          <CardBuyerItem>
+            <CardBuyerLable>點讚人數:{100}</CardBuyerLable>
+            <BsHandThumbsUpFill
+              style={{ fontSize: "25px", marginBottom: "20px", color: "gold" }}
+            ></BsHandThumbsUpFill>
+            <CardBuyerLable>不推薦人數:{10}</CardBuyerLable>
+            <BsHandThumbsDownFill
+              style={{ fontSize: "25px", color: "black" }}
+            ></BsHandThumbsDownFill>
+          </CardBuyerItem>
+        </CardBuyerSection>
+      </CardRightSection>
     </CardBody>
   );
 };
+
 export default Card;

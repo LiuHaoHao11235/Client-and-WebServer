@@ -63,7 +63,7 @@ class Home extends Component {
         <HomeWrapper>
           <HomeBannerSection>
             <MainHomeBanner>
-              <Slider></Slider>
+              <Slider checkbox={true} auto={8000}></Slider>
             </MainHomeBanner>
             <SubHomeBanner>
               <img src={pic6} className="sub-banner-picture" alt="pic6"></img>

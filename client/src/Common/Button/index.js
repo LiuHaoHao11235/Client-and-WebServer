@@ -4,13 +4,15 @@ import styled from "styled-components";
 const defaultType = {
   styled: {
     color: "rgb(0, 0, 0, 0.6)",
-    background: "rgb(128, 128, 128, 0.2)",
+    background: "lightblue",
     width: "100px",
-    height: "40px",
+    height: "60px",
+    borderRadius: "50%",
+    border: "grey 1px solid",
   },
   hover: {
     color: "white",
-    background: "grey",
+    background: "DarkCyan",
   },
 };
 const primaryType = {
