@@ -1,5 +1,5 @@
 // import { useParams } from "react-router-dom";
-import Card from "../../Common/DetailCard/DetailCard";
+import DetailCard from "../../Common/DetailCard/index";
 import styled from "styled-components";
 const DetailWarp = styled.div`
   width: 1920px;
@@ -12,7 +12,7 @@ const Detail = () => {
   // const { phoneID } = useParams();
   return (
     <DetailWarp>
-      <Card></Card>
+      <DetailCard></DetailCard>
     </DetailWarp>
   );
 };

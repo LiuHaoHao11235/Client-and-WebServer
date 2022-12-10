@@ -2,13 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Skeleton, Space } from "antd";
-import {
-  BsFillCartPlusFill,
-  BsHandThumbsUpFill,
-  BsHandThumbsDownFill,
-} from "react-icons/bs";
+import { BsHandThumbsUpFill, BsHandThumbsDownFill } from "react-icons/bs";
 import { ColorSelctor } from "./ColorSelector";
 import { Favorite } from "./Favorite";
+import { AddCart } from "./Carts";
 const CardBody = styled.div`
   width: 1280px;
   height: 100vh;
@@ -98,7 +95,7 @@ const useUsers = () => {
   }, []);
   return { users };
 };
-const Card = () => {
+const DetailCard = () => {
   const { users } = useUsers();
   const arrayOfAllText = [];
   var arrayOfPrize = [];
@@ -195,10 +192,7 @@ const Card = () => {
             <CardBuyerLable htmlFor="BsFillCartPlusFill">
               加入購物車
             </CardBuyerLable>
-            <BsFillCartPlusFill
-              id="BsFillCartPlusFill"
-              style={{ fontSize: "40px" }}
-            ></BsFillCartPlusFill>
+            <AddCart product={users[0]?.phone}></AddCart>
           </CardBuyerItem>
           <CardBuyerItem>
             <CardBuyerLable htmlFor="Favorite">加入最愛</CardBuyerLable>
@@ -224,4 +218,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default DetailCard;

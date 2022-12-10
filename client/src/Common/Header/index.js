@@ -17,6 +17,7 @@ import {
 import { HiUserCircle } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
 import ShowSearchInfo from "./component/SearchInfo";
+import { Cart } from "../DetailCard/Carts";
 import {
   Headersection,
   HeaderWrapper,
@@ -28,7 +29,6 @@ import {
   Navitemaddtional,
   Additionlink,
   UserAvatar,
-  Cart,
 } from "./style.js";
 class Header extends Component {
   static contextType = AuthContext;
@@ -214,7 +214,7 @@ class Header extends Component {
                 )}
                 <span className="userspan">會員中心</span>
               </Link>
-              <Cart value={1}></Cart>
+              <Cart value={this.props.CartList.length}></Cart>
             </NavUser>
           </Nav>
         </HeaderWrapper>
@@ -271,6 +271,7 @@ const mapStateTostate = (state) => {
   return {
     phonetype: state.header.phonetype,
     phonedatafromapi: state.header.phonedatafromapi,
+    CartList: state.addcart.CartList,
   };
 };
 const mapDispatchTostate = (dispatch) => {
