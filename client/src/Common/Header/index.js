@@ -214,7 +214,7 @@ class Header extends Component {
                 )}
                 <span className="userspan">會員中心</span>
               </Link>
-              <Cart value={this.props.CartList.length}></Cart>
+              <Cart></Cart>
             </NavUser>
           </Nav>
         </HeaderWrapper>
@@ -271,7 +271,6 @@ const mapStateTostate = (state) => {
   return {
     phonetype: state.header.phonetype,
     phonedatafromapi: state.header.phonedatafromapi,
-    CartList: state.addcart.CartList,
   };
 };
 const mapDispatchTostate = (dispatch) => {

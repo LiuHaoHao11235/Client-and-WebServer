@@ -74,7 +74,11 @@
         "T7":"螢幕規格:6.1 吋/Retina XDR",
         "T8":"電池容量:3227 mAh",
         "T9":"前相機:1200萬",
-        "T10":"後相機:1200+1200萬"
+        "T10":"後相機:1200+1200萬",
+        "T11":"原廠建議售價$",
+        "T12":"網購優惠價$",
+        "T13":"門市破盤價$",
+        "T14":"省了多少$"
       },
       "picture":{
         "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",

@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { message } from "antd";
+import styled from "styled-components";
+const StyleBsSuitHeartFill = styled(BsSuitHeartFill)`
+  font-size: 25px;
+  color: grey;
+  transition: all 0.1s linear;
+  &:hover {
+    color: red;
+    transform: scale(1.2);
+  }
+`;
 export const Favorite = () => {
   const [like, setLike] = useState(false);
   return (
@@ -25,13 +35,9 @@ export const Favorite = () => {
       }}
     >
       {like ? (
-        <BsSuitHeartFill
-          style={{ fontSize: "25px", color: "red" }}
-        ></BsSuitHeartFill>
+        <StyleBsSuitHeartFill></StyleBsSuitHeartFill>
       ) : (
-        <BsSuitHeartFill
-          style={{ fontSize: "25px", color: "grey" }}
-        ></BsSuitHeartFill>
+        <StyleBsSuitHeartFill></StyleBsSuitHeartFill>
       )}
     </div>
   );

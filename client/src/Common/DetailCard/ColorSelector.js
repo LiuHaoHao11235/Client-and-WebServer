@@ -9,9 +9,10 @@ const PrimaryColorButton = styled.div`
   background-color: ${(props) => {
     return props.color;
   }};
+  border: 1px gray solid;
   border-radius: 50%;
   margin-bottom: 5px;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
   &:hover {
     transform: scale(1.1);
   }
@@ -23,6 +24,7 @@ const ColorButton = styled.div`
   background-color: ${(props) => {
     return props.color;
   }};
+  border: 1px gray solid;
   border-radius: 50%;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -39,7 +41,7 @@ const ColorButton = styled.div`
 `;
 export const ColorSelctor = () => {
   const [color, setColor] = useState({
-    color: "grey",
+    color: "white",
     colorList: ["red", "blue", "black", "green"],
   });
   const [select, setSelect] = useState(false);
@@ -49,7 +51,7 @@ export const ColorSelctor = () => {
     });
   };
   const handleSetColor = (e) => {
-    var NewcolorList = ["grey", "red", "blue", "black", "green"];
+    var NewcolorList = ["white", "red", "blue", "black", "green"];
     NewcolorList = NewcolorList.filter(function (item) {
       return item !== e.target.id;
     });

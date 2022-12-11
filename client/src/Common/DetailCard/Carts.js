@@ -5,33 +5,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { message } from "antd";
 import { Fragment, useState } from "react";
 import ShopList from "./ShopList";
-export const AddCart = (props) => {
-  const CartList = useSelector((state) => state.addcart.CartList);
-  const dispatch = useDispatch();
-  const addItemToCart = (props) => {
-    dispatch({
-      type: "ADD_CART_LIST",
-      item: props.product,
-    });
-    message.success({
-      type: "success",
-      content: "加入購物車",
-      duration: 1,
-    });
-  };
-  console.log(CartList);
-  return (
-    <div onClick={() => addItemToCart(props)}>
-      <BsFillCartPlusFill
-        id="BsFillCartPlusFill"
-        style={{ fontSize: "40px" }}
-      ></BsFillCartPlusFill>
-    </div>
-  );
-};
+const StyleAddCart = styled.div`
+  font-size: 40px;
+  color: green;
+  transition: all 0.1s linear;
+  &:hover {
+    color: lightgreen;
+    transform: scale(1.1);
+  }
+`;
 const StyleCart = styled.div`
   font-size: 35px;
-  color: white;
+  color: orange;
   &:after {
     content: attr(value);
     font-size: 16px;
@@ -46,10 +31,40 @@ const StyleCart = styled.div`
     background-color: red;
   }
   &:hover {
-    color: Crimson;
+    color: lightgreen;
   }
 `;
-export const Cart = (props) => {
+
+export const AddCart = (props) => {
+  const CartList = useSelector((state) => state.addcart.CartList);
+  const Product_Loading_State = useSelector(
+    (state) => state.addcart.Product_Loading_State
+  );
+  // console.log("Product_Loading_State", Product_Loading_State);
+  const dispatch = useDispatch();
+  const addItemToCart = (props) => {
+    if (!Product_Loading_State) {
+      dispatch({
+        type: "ADD_CART_LIST",
+        name: props.product,
+        price: props.price,
+      });
+      message.success({
+        type: "success",
+        content: "加入購物車",
+        duration: 1,
+      });
+    }
+  };
+  console.log(CartList);
+  return (
+    <StyleAddCart onClick={() => addItemToCart(props)}>
+      <BsFillCartPlusFill></BsFillCartPlusFill>
+    </StyleAddCart>
+  );
+};
+export const Cart = () => {
+  const CartList = useSelector((state) => state.addcart.CartList);
   const [openInfo, setOpenInfo] = useState(false);
   const handleClickCart = () => {
     setOpenInfo((pervOpenInfo) => {
@@ -59,16 +74,11 @@ export const Cart = (props) => {
 
   return (
     <Fragment>
-      {props.value > 0 ? (
-        <StyleCart {...props} onClick={handleClickCart}>
+      {
+        <StyleCart value={CartList?.length} onClick={handleClickCart}>
           <HiShoppingCart></HiShoppingCart>
         </StyleCart>
-      ) : (
-        <HiShoppingCart
-          onClick={handleClickCart}
-          style={{ fontSize: "35px", color: "white" }}
-        ></HiShoppingCart>
-      )}
+      }
       {openInfo ? <ShopList></ShopList> : null}
     </Fragment>
   );
