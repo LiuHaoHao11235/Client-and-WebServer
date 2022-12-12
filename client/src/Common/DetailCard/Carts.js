@@ -36,7 +36,6 @@ const StyleCart = styled.div`
 `;
 
 export const AddCart = (props) => {
-  const CartList = useSelector((state) => state.addcart.CartList);
   const Product_Loading_State = useSelector(
     (state) => state.addcart.Product_Loading_State
   );
@@ -56,7 +55,6 @@ export const AddCart = (props) => {
       });
     }
   };
-  console.log(CartList);
   return (
     <StyleAddCart onClick={() => addItemToCart(props)}>
       <BsFillCartPlusFill></BsFillCartPlusFill>

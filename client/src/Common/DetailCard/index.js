@@ -2,11 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Skeleton, Space } from "antd";
-import { BsHandThumbsUpFill, BsHandThumbsDownFill } from "react-icons/bs";
+import RomSizeSelector from "./RomSizeSelector";
 import { ColorSelctor } from "./ColorSelector";
 import { Favorite } from "./Favorite";
 import { AddCart } from "./Carts";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 const CardBody = styled.div`
   width: 1280px;
   height: 100vh;
@@ -121,14 +121,22 @@ const useUsers = () => {
   }, [dispatch]);
   return { users };
 };
-const DetailCard = () => {
+const DetailCard = (props) => {
+  const index = useSelector((state) => state.addcart.ProductIndex);
+  const dispatch = useDispatch();
+  const TotatalSequence = props.TotatalSequence;
   const { users } = useUsers();
   const arrayOfAllText = [];
   var arrayOfPrice = [];
-  if (users[0]) {
-    console.log(users[0]);
-    Object.keys(users[0].texts).forEach(function (key) {
-      arrayOfAllText.push(users[0].texts[key]);
+  useEffect(() => {
+    dispatch({
+      type: "RESET_SPECIFICATION",
+    });
+  }, [props]);
+  if (users[TotatalSequence]?.[index]) {
+    console.log(users[TotatalSequence][index]);
+    Object.keys(users[TotatalSequence][index].texts).forEach(function (key) {
+      arrayOfAllText.push(users[TotatalSequence][index].texts[key]);
     });
     arrayOfPrice = arrayOfAllText.splice(-4); //arrayOfAllText變成規格text
   }
@@ -138,8 +146,8 @@ const DetailCard = () => {
       <CardLeftSection>
         <CardTextTitle>
           <TextTitle>
-            {users[0] ? (
-              users[0].phone
+            {users[TotatalSequence]?.[index] ? (
+              users[TotatalSequence][index].phone
             ) : (
               <Skeleton.Input
                 style={{ width: "400px" }}
@@ -196,10 +204,10 @@ const DetailCard = () => {
       </CardLeftSection>
       <CardRightSection>
         <CardPictureSection>
-          {users[0] ? (
+          {users[TotatalSequence]?.[index] ? (
             <img
               style={{ width: "100%" }}
-              src={users[0].picture.white1}
+              src={users[TotatalSequence][index].picture.white1}
               alt="phone1"
             ></img>
           ) : (
@@ -212,8 +220,8 @@ const DetailCard = () => {
               加入購物車
             </CardBuyerLable>
             <AddCart
-              product={users[0]?.phone}
-              price={arrayOfPrice?.[2]}
+              product={users[TotatalSequence]?.[index]?.phone}
+              price={arrayOfPrice?.[2]?.split(":")[1]}
             ></AddCart>
           </CardBuyerItem>
           <CardBuyerItem>
@@ -225,10 +233,8 @@ const DetailCard = () => {
             <ColorSelctor id="ColorSelctor"></ColorSelctor>
           </CardBuyerItem>
           <CardBuyerItem>
-            <CardBuyerLable>點讚人數:{100}</CardBuyerLable>
-            <BsHandThumbsUpFill
-              style={{ fontSize: "25px", marginBottom: "10px", color: "gold" }}
-            ></BsHandThumbsUpFill>
+            <CardBuyerLable>選擇容量</CardBuyerLable>
+            <RomSizeSelector></RomSizeSelector>
           </CardBuyerItem>
         </CardBuyerSection>
       </CardRightSection>

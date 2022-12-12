@@ -62,8 +62,8 @@
     }
   ],
   "PhonesDetail": [
-    {
-      "phone":"APPLE IPHONE 13",
+    [{
+      "phone":"APPLE IPHONE 14 128G",
       "texts": {
         "T1":"上市日期:2021/09",
         "T2":"作業系統:iOS 15",
@@ -75,10 +75,10 @@
         "T8":"電池容量:3227 mAh",
         "T9":"前相機:1200萬",
         "T10":"後相機:1200+1200萬",
-        "T11":"原廠建議售價$",
-        "T12":"網購優惠價$",
-        "T13":"門市破盤價$",
-        "T14":"省了多少$"
+        "T11":"原廠建議售價:$25000",
+        "T12":"網購優惠價:$24000",
+        "T13":"門市破盤價:$23000",
+        "T14":"省了多少:$2000"
       },
       "picture":{
         "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
@@ -86,6 +86,57 @@
         "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
       }
     }
+    ,
+    {
+      "phone":"APPLE IPHONE 14 256G",
+      "texts": {
+        "T1":"上市日期:2022/09",
+        "T2":"作業系統:iOS 16",
+        "T3":"通訊類型:5G",
+        "T4":"SIM卡規格:nano/雙卡",
+        "T5":"處理器:Apple A15",
+        "T6":"ROM:128G",
+        "T7":"螢幕規格:6.1 吋/Retina XDR",
+        "T8":"電池容量:3279 mAh",
+        "T9":"前相機:1200萬",
+        "T10":"後相機:1200+1200萬",
+        "T11":"原廠建議售價:$27,900",
+        "T12":"網購優惠價:$25,989",
+        "T13":"門市破盤價:$24,990",
+        "T14":"省了多少:$3000"
+      },
+      "picture":{
+        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
+        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
+        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
+      }
+    }
+    ,
+    {
+      "phone":"APPLE IPHONE 14 512G",
+      "texts": {
+        "T1":"上市日期:2022/09",
+        "T2":"作業系統:iOS 16",
+        "T3":"通訊類型:5G",
+        "T4":"SIM卡規格:nano/雙卡",
+        "T5":"處理器:Apple A15",
+        "T6":"ROM:128G",
+        "T7":"螢幕規格:6.1 吋/Retina XDR",
+        "T8":"電池容量:3279 mAh",
+        "T9":"前相機:1200萬",
+        "T10":"後相機:1200+1200萬",
+        "T11":"原廠建議售價:$27,900",
+        "T12":"網購優惠價:$25,989",
+        "T13":"門市破盤價:$24,990",
+        "T14":"省了多少:$3000"
+      },
+      "picture":{
+        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
+        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
+        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
+      }
+    }]
+    ,[]
   ],
   "sliderPic": [
     {
@@ -126,105 +177,133 @@
     },
   {
     "producttitle": "Apple iPhone 14 128G",
-    "productseries":"Apple iPhone 14",
+    "productseries":"iPhone14",
     "marketprice":"$27,900",
     "specialprice":"$25,990",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":0,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 256G",
-    "productseries":"Apple iPhone 14",
+    "productseries":"iPhone14",
     "marketprice":"$31,400",
     "specialprice":"$28,800",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":1,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 512G",
-    "productseries":"Apple iPhone 14",
+    "productseries":"iPhone14",
     "marketprice":"$38,400",
     "specialprice":"$33,300",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":2,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 Plus 128G",
-    "productseries":"Apple iPhone 14 Plus",
+    "productseries":"iPhone14",
     "marketprice":"$31,900",
     "specialprice":"$29,990",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":0,
+    "totatalsequence":1
   },
   {
     "producttitle": "Apple iPhone 14 Plus 256G",
-    "productseries":"Apple iPhone 14 Plus",
+    "productseries":"iPhone14",
     "marketprice":"$35,400",
     "specialprice":"$33,300",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":1,
+    "totatalsequence":1
   }
   ,
   {
     "producttitle": "Apple iPhone 14 Plus 512G",
-    "productseries":"Apple iPhone 14 Plus",
+    "productseries":"iPhone14",
     "marketprice":"$42,400",
     "specialprice":"$39,990",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":2,
+    "totatalsequence":1
   }
   ,
   {
     "producttitle": "Apple iPhone 14 Pro 128G",
-    "productseries":"Apple iPhone 14 Pro",
+    "productseries":"iPhone14",
     "marketprice":"$34,900",
     "specialprice":"$34,990",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":0,
+    "totatalsequence":2
   }
   ,
   {
     "producttitle": "Apple iPhone 14 Pro 256G",
-    "productseries":"Apple iPhone 14 Pro",
+    "productseries":"iPhone14",
     "marketprice":"$38,400",
     "specialprice":"$38,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":1,
+    "totatalsequence":2
   },
   {
     "producttitle": "Apple iPhone 14 Pro 512G",
-    "productseries":"Apple iPhone 14 Pro",
+    "productseries":"iPhone14",
     "marketprice":"$45,400",
     "specialprice":"$45,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":2,
+    "totatalsequence":2
   },
   {
     "producttitle": "Apple iPhone 14 Pro 1TB",
-    "productseries":"Apple iPhone 14 Pro",
+    "productseries":"iPhone14",
     "marketprice":"$52,400",
     "specialprice":"$52,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":9,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 Pro Max 128G",
-    "productseries":"Apple iPhone 14 Pro Max",
+    "productseries":"iPhone14",
     "marketprice":"$38,900",
     "specialprice":"$38,900",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":10,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 Pro Max 256G",
-    "productseries":"Apple iPhone 14 Pro Max",
+    "productseries":"iPhone14",
     "marketprice":"$42,400",
     "specialprice":"$42,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":11,
+    "totatalsequence":0
   }
   ,
   {
     "producttitle": "Apple iPhone 14 Pro Max 512G",
-    "productseries":"Apple iPhone 14 Pro Max",
+    "productseries":"iPhone14",
     "marketprice":"$49,400",
     "specialprice":"$49,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":12,
+    "totatalsequence":0
   },
   {
     "producttitle": "Apple iPhone 14 Pro Max 1TB",
-    "productseries":"Apple iPhone 14 Pro Max",
+    "productseries":"iPhone14",
     "marketprice":"$56,400",
     "specialprice":"$56,400",
-    "producttitleicon":"true"
+    "producttitleicon":"true",
+    "index":13,
+    "totatalsequence":0
   }
   ,
   {

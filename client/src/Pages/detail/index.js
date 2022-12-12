@@ -1,6 +1,6 @@
-// import { useParams } from "react-router-dom";
 import DetailCard from "../../Common/DetailCard/index";
 import styled from "styled-components";
+import { useSearchParams } from "react-router-dom";
 const DetailWarp = styled.div`
   width: 1920px;
   height: 100%;
@@ -9,10 +9,15 @@ const DetailWarp = styled.div`
   align-items: center;
 `;
 const Detail = () => {
-  // const { phoneID } = useParams();
+  const [searchParams] = useSearchParams();
+  const PhoneIndex = searchParams.get("index");
+  const TotatalSequence = searchParams.get("totatalsequence");
   return (
     <DetailWarp>
-      <DetailCard></DetailCard>
+      <DetailCard
+        index={PhoneIndex}
+        TotatalSequence={TotatalSequence}
+      ></DetailCard>
     </DetailWarp>
   );
 };

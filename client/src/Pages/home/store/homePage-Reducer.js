@@ -8,14 +8,16 @@ const defaultState = {
 const homePageReducer = (state = defaultState, action) => {
   if (action.type === "LOAD_COMMODITY_SUCCESS") {
     const newState = JSON.parse(JSON.stringify(state));
-    newState.commoditylist = [...action.data][0].commoditys;
+    // newState.commoditylist = [...action.data][0].commoditys;
+    newState.commoditylist = [...action.data];
     // console.log(newState.commoditylist);
     return newState;
   }
   if (action.type === "load_more_commodity") {
     const newState = JSON.parse(JSON.stringify(state));
     newState.window_resize = action.window_resize;
-    newState.commoditylist = [...action.data][0].commoditys;
+    // newState.commoditylist = [...action.data][0].commoditys;
+    newState.commoditylist = [...action.data];
     // console.log(newState.commoditylist);
     newState.page = state.page + 1;
     return newState;

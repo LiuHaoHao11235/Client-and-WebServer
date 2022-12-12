@@ -21,11 +21,7 @@ function App() {
             <Suspense fallback={<h1>LAZY LOADING....</h1>}>
               <Routes>
                 <Route exact path="/*" element={<Home></Home>}></Route>
-                <Route
-                  path="detail/:phoneID"
-                  element={<Detail></Detail>}
-                ></Route>
-                <Route path="detail" element={<Detail></Detail>}></Route>
+                <Route path="detail/*" element={<Detail></Detail>}></Route>
                 <Route
                   path="/users/*"
                   element={<LoginPage></LoginPage>}

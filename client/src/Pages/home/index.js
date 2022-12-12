@@ -56,7 +56,6 @@ class Home extends Component {
         ...local_commoditylist,
         ...this.props.commoditylist,
       ];
-      // console.log(local_commoditylist);
     }
     return (
       <Fragment>
@@ -203,7 +202,9 @@ class Home extends Component {
                         門市價:{commodity.specialprice}
                       </span>
                     </Commodityprize>
-                    <Link to={`/detail/${commodity.productseries}`}>
+                    <Link
+                      to={`/detail/product?productseries=${commodity.productseries}&totatalsequence=${commodity.totatalsequence}&index=${commodity.index}`}
+                    >
                       <button className="productbotton">詳情</button>
                     </Link>
                   </CommodityInfo>
@@ -309,7 +310,8 @@ const mapDispatchToProps = (dispatch) => {
       const action = function (dispatch) {
         //!因為thunk讓我可以action可以是function型態
         axios
-          .get(`http://localhost:8000/users/commodity`)
+          // .get(`http://localhost:8000/users/commodity`)
+          .get(`http://localhost:5000/commodity`)
           .then((res) =>
             dispatch({
               type: "LOAD_COMMODITY_SUCCESS",
@@ -329,7 +331,8 @@ const mapDispatchToProps = (dispatch) => {
       const action = function (dispatch) {
         //!因為thunk讓我可以action可以是function型態
         axios
-          .get(`http://localhost:8000/users/commodity?page=${page}`)
+          // .get(`http://localhost:8000/users/commodity?page=${page}`)
+          .get(`http://localhost:5000/commodity${page}`)
           .then((res) =>
             dispatch({
               type: "load_more_commodity",

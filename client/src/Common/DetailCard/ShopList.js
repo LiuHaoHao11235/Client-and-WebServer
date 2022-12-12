@@ -1,16 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Table, Form, InputNumber, Popconfirm, Typography } from "antd";
-const data = [];
-for (let i = 0; i < 20; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    Specification: `11111111111111111`,
-    price: `10999`,
-    number: 1,
-  });
-}
 const EditableCell = ({
   editing,
   dataIndex,
@@ -46,9 +36,14 @@ const EditableCell = ({
 };
 const ShopList = () => {
   const CartList = useSelector((state) => state.addcart.CartList);
-  const dispatch = useDispatch();
-  const [selectedRowIndex, setSelectedRowIndex] = useState([]);
   const [itemList, setItemList] = useState(CartList);
+  useEffect(() => {
+    setItemList(() => {
+      return CartList;
+    });
+  }, [CartList]);
+  const dispatch = useDispatch();
+  const [selectedRowKey, setSelectedRowKey] = useState([]);
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
   const [editingKey, setEditingKey] = useState("");
@@ -68,19 +63,27 @@ const ShopList = () => {
   const save = async (key) => {
     try {
       const row = await form.validateFields();
-      const newData = [...CartList];
-      const index = newData.findIndex((item) => key === item.key);
+      const newCartList = [...CartList];
+      const index = newCartList.findIndex((item) => key === item.key);
       if (index > -1) {
-        const item = newData[index];
-        newData.splice(index, 1, {
+        const item = newCartList[index];
+        newCartList.splice(index, 1, {
           ...item,
           ...row,
         });
-        setItemList(newData);
+        // console.log("newCartList", newCartList);
+        setItemList(newCartList);
         setEditingKey("");
+        setTimeout(() => {
+          dispatch({
+            type: "EDIT_PRODUCT_FROM_SHOPLIST",
+            NewCartList: newCartList,
+          }); //TODO dispatch設定STORE中的值必須要最後執行 所以放在setTimeout中 否則setState hook是異步操作 newCartList值還沒更改就先執行dispatch了
+        });
       } else {
-        newData.push(row);
-        setItemList(newData);
+        // console.log("newCartList", newCartList);
+        newCartList.push(row);
+        setItemList(newCartList);
         setEditingKey("");
       }
     } catch (errInfo) {
@@ -105,14 +108,14 @@ const ShopList = () => {
         width: "15%",
       },
       {
-        title: "商品數量",
+        title: "購買數量",
         dataIndex: "number",
         width: "15%",
         editable: true,
       },
       {
-        title: "operation",
-        dataIndex: "operation",
+        title: "編輯商品數量",
+        dataIndex: "編輯商品數量",
         width: "20%",
         render: (_, record) => {
           const editable = isEditing(record);
@@ -124,10 +127,10 @@ const ShopList = () => {
                   marginRight: 12,
                 }}
               >
-                Save
+                儲存
               </Typography.Link>
               <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-                <a href="none">Cancel</a>
+                <a href="none">取消</a>
               </Popconfirm>
             </span>
           ) : (
@@ -135,7 +138,7 @@ const ShopList = () => {
               disabled={editingKey !== ""}
               onClick={() => edit(record)}
             >
-              Edit
+              編輯
             </Typography.Link>
           );
         },
@@ -146,11 +149,10 @@ const ShopList = () => {
   const DeleteItem = (selectedProductList) => {
     setTimeout(() => {
       setItemList((prevItemList) => {
-        selectedRowIndex.forEach((selectedKey) => {
+        selectedRowKey.forEach((selectedKey) => {
           prevItemList.forEach((Item) => {
             if (Item.key === selectedKey) {
               selectedProductList.push(Item.name);
-              console.log("selectedProductList", selectedProductList);
               prevItemList = prevItemList.filter(function (item) {
                 return item !== Item;
               });
@@ -171,21 +173,21 @@ const ShopList = () => {
       dispatch({
         type: "DELETE_PRODUCT_FROM_SHOPLIST",
         selectedProductList: selectedProductList,
-        selectedRowIndex: selectedRowIndex,
+        selectedRowIndex: selectedRowKey,
       });
-      setSelectedRowIndex([]);
+      setSelectedRowKey([]);
       setLoading(false);
     }, 1000);
   };
   const onSelectChange = (newSelectedRowIndex) => {
     console.log("selectedRowIndex", newSelectedRowIndex.sort());
-    setSelectedRowIndex(newSelectedRowIndex.sort());
+    setSelectedRowKey(newSelectedRowIndex.sort());
   };
   const rowSelection = {
-    selectedRowIndex: selectedRowIndex,
+    selectedRowIndex: selectedRowKey,
     onChange: onSelectChange,
   };
-  const hasSelected = selectedRowIndex.length > 0;
+  const hasSelected = selectedRowKey.length > 0;
   const mergedColumns = columns.map((col) => {
     if (!col.editable) {
       return col;
@@ -245,7 +247,7 @@ const ShopList = () => {
               color: "red",
             }}
           >
-            {hasSelected ? `選擇 ${selectedRowIndex.length} 個商品` : ""}
+            {hasSelected ? `選擇 ${selectedRowKey.length} 個商品` : ""}
           </span>
         </div>
         <Table

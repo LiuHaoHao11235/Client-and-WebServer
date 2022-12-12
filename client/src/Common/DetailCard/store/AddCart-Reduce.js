@@ -2,13 +2,18 @@ const ADD_CART_LIST = "ADD_CART_LIST";
 const PRODUCT_IS_LOADED = "PRODUCT_IS_LOADED";
 const PRODUCT_IS_LOADING = "PRODUCT_IS_LOADING";
 const DELETE_PRODUCT_FROM_SHOPLIST = "DELETE_PRODUCT_FROM_SHOPLIST";
+const EDIT_PRODUCT_FROM_SHOPLIST = "EDIT_PRODUCT_FROM_SHOPLIST";
+const SELECT_PHONE_COLOR = "SELECT_PHONE_COLOR";
+const RESET_SPECIFICATION = "RESET_SPECIFICATION";
+const SET_PRODUCT_INDEX = "SET_PRODUCT_INDEX";
 const initState = {
   CartList: [],
   ProductInCartList: [],
   Product_Loading_State: true,
+  ProductSpecification: { color: "white", rom: "128G" },
+  ProductIndex: 0,
 };
 const filterArr = (arr1, arr2) => {
-  console.log(arr2);
   const arr = [...arr1, ...arr2];
   const newArr = arr.filter((t) => {
     return !(arr1.includes(t) && arr2.includes(t));
@@ -64,12 +69,38 @@ const AddCartReducer = (state = initState, action) => {
         newState.ProductInCartList,
         action.selectedProductList
       );
+
       newState.ProductInCartList = newProductInCartList;
-      action.selectedRowIndex.forEach((selectedIndex) => {
-        newState.CartList.splice(selectedIndex, 1);
+      // console.log("selectedRowIndex為", action.selectedRowIndex);
+      action.selectedRowIndex.forEach((selectedIndex, index) => {
+        console.log(
+          "刪除清單資料!!!",
+          newState.CartList[selectedIndex - index]
+        );
+        newState.CartList.splice(selectedIndex - index, 1);
       });
-      console.log(newState.CartList);
-      console.log(newState.ProductInCartList);
+
+      return newState;
+    }
+    case EDIT_PRODUCT_FROM_SHOPLIST: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.CartList = action.NewCartList;
+      return newState;
+    }
+    case SELECT_PHONE_COLOR: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.ProductSpecification.color = action.color;
+      console.log("color", newState.ProductSpecification.color);
+      return newState;
+    }
+    case RESET_SPECIFICATION: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.ProductSpecification = { color: "white", rom: "128G" };
+      return newState;
+    }
+    case SET_PRODUCT_INDEX: {
+      const newState = JSON.parse(JSON.stringify(state));
+      newState.ProductIndex = action.ProductIndex;
       return newState;
     }
     default:

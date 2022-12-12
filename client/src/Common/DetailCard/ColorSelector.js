@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
 const ColorButtonGroup = styled.div`
   height: 200px;
 `;
@@ -40,10 +41,11 @@ const ColorButton = styled.div`
   }
 `;
 export const ColorSelctor = () => {
-  const [color, setColor] = useState({
-    color: "white",
-    colorList: ["red", "blue", "black", "green"],
-  });
+  const color = useSelector(
+    (state) => state.addcart.ProductSpecification.color
+  );
+  const dispatch = useDispatch();
+  const [colorList, setColorList] = useState(["red", "blue", "black", "green"]);
   const [select, setSelect] = useState(false);
   const handleSelectColor = () => {
     setSelect((select) => {
@@ -58,19 +60,21 @@ export const ColorSelctor = () => {
     setSelect(() => {
       return false;
     });
-    setColor((PrevState) => ({
-      ...PrevState,
+    setColorList(() => {
+      return NewcolorList;
+    });
+    dispatch({
+      type: "SELECT_PHONE_COLOR",
       color: e.target.id,
-      colorList: NewcolorList,
-    }));
+    });
   };
   return (
     <ColorButtonGroup selected={select}>
       <PrimaryColorButton
-        color={color.color}
+        color={color}
         onClick={handleSelectColor}
       ></PrimaryColorButton>
-      {color.colorList.map((color, index) => {
+      {colorList.map((color, index) => {
         return (
           <ColorButton
             id={color}
