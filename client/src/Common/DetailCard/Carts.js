@@ -16,11 +16,12 @@ const StyleAddCart = styled.div`
 `;
 const StyleCart = styled.div`
   font-size: 35px;
-  color: orange;
+  color: lightgreen;
   &:after {
     content: attr(value);
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
+    font-weight: 300;
     background: red;
     border-radius: 50%;
     padding: 0 5px;
@@ -30,8 +31,11 @@ const StyleCart = styled.div`
     opacity: 0.9;
     background-color: red;
   }
+  &:hover:after {
+    background-color: #aa0000;
+  }
   &:hover {
-    color: lightgreen;
+    color: lightpink;
   }
 `;
 

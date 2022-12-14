@@ -10,7 +10,7 @@ const initState = {
   CartList: [],
   ProductInCartList: [],
   Product_Loading_State: true,
-  ProductSpecification: { color: "white", rom: "128G" },
+  ProductSpecification: { color: "", rom: "128G", ColorIndex: 0 },
   ProductIndex: 0,
 };
 const filterArr = (arr1, arr2) => {
@@ -37,10 +37,10 @@ const AddCartReducer = (state = initState, action) => {
       const checkOutState = CheckOutProductInCartList();
       // console.log(checkOutState);
       if (checkOutState[0]) {
-        console.log("商品已經在購物車中");
+        console.log(`${action.name}商品已經在購物車中`);
         newState.CartList[checkOutState[1]].number++;
       } else if (!checkOutState[0]) {
-        console.log("商品第一次入購物車中");
+        console.log(`${action.name}商品第一次入購物車中`);
         const productDetail = {
           key: checkOutState[1],
           name: action.name,
@@ -90,12 +90,16 @@ const AddCartReducer = (state = initState, action) => {
     case SELECT_PHONE_COLOR: {
       const newState = JSON.parse(JSON.stringify(state));
       newState.ProductSpecification.color = action.color;
-      console.log("color", newState.ProductSpecification.color);
+      newState.ProductSpecification.ColorIndex = action.ColorIndex;
       return newState;
     }
     case RESET_SPECIFICATION: {
       const newState = JSON.parse(JSON.stringify(state));
-      newState.ProductSpecification = { color: "white", rom: "128G" };
+      newState.ProductSpecification = {
+        color: "white",
+        rom: "128G",
+        ColorIndex: 0,
+      };
       return newState;
     }
     case SET_PRODUCT_INDEX: {

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 const ColorButtonGroup = styled.div`
   height: 200px;
 `;
@@ -40,20 +40,27 @@ const ColorButton = styled.div`
     transform: scale(1.1);
   }
 `;
-export const ColorSelctor = () => {
-  const color = useSelector(
-    (state) => state.addcart.ProductSpecification.color
-  );
-  const dispatch = useDispatch();
-  const [colorList, setColorList] = useState(["red", "blue", "black", "green"]);
+export const ColorSelctor = (props) => {
+  const [color, setColor] = useState(props.colorlist[0]);
+  const [colorList, setColorList] = useState(props.colorlist);
   const [select, setSelect] = useState(false);
+  const dispatch = useDispatch();
+  const CalColorIndex = (props, e) => {
+    const index = props.colorlist.findIndex((color, index) => {
+      if (color === e.target.id) return index;
+    });
+    if (index < 0) {
+      return 0;
+    } else return index;
+  };
   const handleSelectColor = () => {
     setSelect((select) => {
       return !select;
     });
   };
   const handleSetColor = (e) => {
-    var NewcolorList = ["white", "red", "blue", "black", "green"];
+    var NewcolorList = props.colorlist;
+    const ColorIndex = CalColorIndex(props, e);
     NewcolorList = NewcolorList.filter(function (item) {
       return item !== e.target.id;
     });
@@ -63,9 +70,13 @@ export const ColorSelctor = () => {
     setColorList(() => {
       return NewcolorList;
     });
+    setColor(() => {
+      return e.target.id;
+    });
     dispatch({
       type: "SELECT_PHONE_COLOR",
       color: e.target.id,
+      ColorIndex: ColorIndex,
     });
   };
   return (
@@ -74,13 +85,16 @@ export const ColorSelctor = () => {
         color={color}
         onClick={handleSelectColor}
       ></PrimaryColorButton>
-      {colorList.map((color, index) => {
+      {colorList.map((restColor, index) => {
+        if (restColor === color) {
+          return null;
+        }
         return (
           <ColorButton
-            id={color}
+            id={restColor}
             selected={select}
             key={index}
-            color={color}
+            color={restColor}
             onClick={handleSetColor}
           ></ColorButton>
         );

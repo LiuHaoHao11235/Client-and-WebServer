@@ -7,6 +7,7 @@ import { ColorSelctor } from "./ColorSelector";
 import { Favorite } from "./Favorite";
 import { AddCart } from "./Carts";
 import { useSelector, useDispatch } from "react-redux";
+import Slider from "../Slider/Slider";
 const CardBody = styled.div`
   width: 1280px;
   height: 100vh;
@@ -15,7 +16,7 @@ const CardBody = styled.div`
   align-items: center;
 `;
 const CardRightSection = styled.div`
-  margin-top: 100px;
+  margin-top: 60px;
   height: 800px;
   width: 620px;
   display: flex;
@@ -35,24 +36,39 @@ const CardPictureSection = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
-  margin-top: 70px;
-  /* background-color: lightgreen; */
+  margin-top: 10px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 `;
 const CardBuyerLable = styled.label`
   font-size: 24px;
   margin-bottom: 10px;
   font-weight: 600;
 `;
+const CardBuyerHeadSection = styled.div`
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.8);
+  height: 140px;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+`;
+const StyledBuyerHeadItem = styled.div`
+  width: 25%;
+  height: 140px;
+`;
 const CardBuyerSection = styled.div`
   width: 620px;
-  height: 280px;
+  height: 220px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(211, 211, 211, 0.8);
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 `;
 const CardBuyerItem = styled.div`
-  margin-top: 150px;
+  margin-top: 50px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -64,25 +80,31 @@ const CardTextTitle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(211, 211, 211, 0.3);
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  background-color: rgba(211, 211, 211, 0.8);
 `;
 const CardTextItem = styled.div`
   width: 100%;
   height: 350px;
   box-sizing: border-box;
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(211, 211, 211, 0.8);
   padding-top: 60px;
   display: inline-block;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
   margin-top: 10px;
 `;
 const CardTextPrize = styled.div`
   width: 100%;
   height: 280px;
   margin-top: 10px;
-  background-color: rgba(211, 211, 211, 0.3);
+  background-color: rgba(211, 211, 211, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
 `;
 const TextTitle = styled.span`
   font-size: 2.4rem;
@@ -100,6 +122,14 @@ const Text = styled.span`
   line-height: 16px;
   margin-left: 50px;
 `;
+// const BuyerHeadItem = (props) => {
+//   return (
+//     <StyledBuyerHeadItem>
+//       <img src={props.seriespicture}></img>
+//     </StyledBuyerHeadItem>
+//   );
+// };
+
 const useUsers = () => {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
@@ -122,7 +152,10 @@ const useUsers = () => {
   return { users };
 };
 const DetailCard = (props) => {
-  const index = useSelector((state) => state.addcart.ProductIndex);
+  const ProductIndex = useSelector((state) => state.addcart.ProductIndex);
+  const ColorIndex = useSelector(
+    (state) => state.addcart.ProductSpecification.ColorIndex
+  );
   const dispatch = useDispatch();
   const TotatalSequence = props.TotatalSequence;
   const { users } = useUsers();
@@ -133,10 +166,12 @@ const DetailCard = (props) => {
       type: "RESET_SPECIFICATION",
     });
   }, [props]);
-  if (users[TotatalSequence]?.[index]) {
-    console.log(users[TotatalSequence][index]);
-    Object.keys(users[TotatalSequence][index].texts).forEach(function (key) {
-      arrayOfAllText.push(users[TotatalSequence][index].texts[key]);
+  if (users[TotatalSequence]?.[ProductIndex]) {
+    // console.log(users[TotatalSequence][index]);
+    Object.keys(users[TotatalSequence][ProductIndex].texts).forEach(function (
+      key
+    ) {
+      arrayOfAllText.push(users[TotatalSequence][ProductIndex].texts[key]);
     });
     arrayOfPrice = arrayOfAllText.splice(-4); //arrayOfAllText變成規格text
   }
@@ -146,8 +181,8 @@ const DetailCard = (props) => {
       <CardLeftSection>
         <CardTextTitle>
           <TextTitle>
-            {users[TotatalSequence]?.[index] ? (
-              users[TotatalSequence][index].phone
+            {users[TotatalSequence]?.[ProductIndex] ? (
+              users[TotatalSequence][ProductIndex].phone
             ) : (
               <Skeleton.Input
                 style={{ width: "400px" }}
@@ -166,7 +201,7 @@ const DetailCard = (props) => {
             <Space
               direction="vertical"
               size="middle"
-              style={{ display: "flex" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <Skeleton.Input
                 style={{ width: "400px" }}
@@ -197,40 +232,86 @@ const DetailCard = (props) => {
           )}
         </CardTextItem>
         <CardTextPrize style={{ display: "flex", flexDirection: "column" }}>
-          {arrayOfPrice.map((text, index) => {
-            return <Text key={index}>{text}</Text>;
-          })}
+          {arrayOfPrice[0] ? (
+            arrayOfPrice.map((text, index) => {
+              return <Text key={index}>{text}</Text>;
+            })
+          ) : (
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Skeleton.Input
+                style={{ width: "400px" }}
+                active={true}
+                shape={"round"}
+              />
+              <Skeleton.Input
+                style={{ width: "400px" }}
+                active={true}
+                shape={"round"}
+              />
+              <Skeleton.Input
+                style={{ width: "400px" }}
+                active={true}
+                shape={"round"}
+              />
+              <Skeleton.Input
+                style={{ width: "400px" }}
+                active={true}
+                shape={"round"}
+              />
+            </Space>
+          )}
         </CardTextPrize>
       </CardLeftSection>
       <CardRightSection>
+        <CardBuyerHeadSection></CardBuyerHeadSection>
         <CardPictureSection>
-          {users[TotatalSequence]?.[index] ? (
-            <img
-              style={{ width: "100%" }}
-              src={users[TotatalSequence][index].picture.white1}
-              alt="phone1"
-            ></img>
-          ) : (
-            <Skeleton.Image active={true} />
-          )}
+          <div
+            style={{
+              width: "95%",
+              height: "90%",
+              border: "1px grey solid",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {users[TotatalSequence]?.[3] ? (
+              <Slider
+                checkbox={true}
+                auto={false}
+                picture={users[TotatalSequence]?.[3].picture.slice(
+                  ColorIndex * 3,
+                  (ColorIndex + 1) * 3
+                )}
+              ></Slider>
+            ) : (
+              <Skeleton.Image active={true} />
+            )}
+          </div>
         </CardPictureSection>
         <CardBuyerSection>
           <CardBuyerItem>
-            <CardBuyerLable htmlFor="BsFillCartPlusFill">
-              加入購物車
-            </CardBuyerLable>
+            <CardBuyerLable>加入購物車</CardBuyerLable>
             <AddCart
-              product={users[TotatalSequence]?.[index]?.phone}
+              product={users[TotatalSequence]?.[ProductIndex]?.phone}
               price={arrayOfPrice?.[2]?.split(":")[1]}
             ></AddCart>
           </CardBuyerItem>
           <CardBuyerItem>
-            <CardBuyerLable htmlFor="Favorite">加入最愛</CardBuyerLable>
-            <Favorite id="Favorite"></Favorite>
+            <CardBuyerLable>加入最愛</CardBuyerLable>
+            <Favorite></Favorite>
           </CardBuyerItem>
           <CardBuyerItem>
-            <CardBuyerLable htmlFor="ColorSelctor">選擇顏色</CardBuyerLable>
-            <ColorSelctor id="ColorSelctor"></ColorSelctor>
+            <CardBuyerLable>選擇顏色</CardBuyerLable>
+            {users[TotatalSequence]?.[3] ? (
+              <ColorSelctor
+                colorlist={users[TotatalSequence]?.[3].colorlist}
+              ></ColorSelctor>
+            ) : null}
           </CardBuyerItem>
           <CardBuyerItem>
             <CardBuyerLable>選擇容量</CardBuyerLable>

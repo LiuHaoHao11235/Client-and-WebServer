@@ -4,7 +4,13 @@ import { message } from "antd";
 import styled from "styled-components";
 const StyleBsSuitHeartFill = styled(BsSuitHeartFill)`
   font-size: 25px;
-  color: grey;
+  color: ${(props) => {
+    if (props.islike) {
+      return "red";
+    } else {
+      return "grey";
+    }
+  }};
   transition: all 0.1s linear;
   &:hover {
     color: red;
@@ -12,14 +18,14 @@ const StyleBsSuitHeartFill = styled(BsSuitHeartFill)`
   }
 `;
 export const Favorite = () => {
-  const [like, setLike] = useState(false);
+  const [islike, setIslike] = useState(false);
   return (
     <div
       onClick={() => {
-        setLike((like) => {
-          return !like;
+        setIslike((islike) => {
+          return !islike;
         });
-        if (!like) {
+        if (!islike) {
           message.success({
             type: "success",
             content: "加入到我的最愛",
@@ -34,11 +40,7 @@ export const Favorite = () => {
         });
       }}
     >
-      {like ? (
-        <StyleBsSuitHeartFill></StyleBsSuitHeartFill>
-      ) : (
-        <StyleBsSuitHeartFill></StyleBsSuitHeartFill>
-      )}
+      <StyleBsSuitHeartFill $islike={islike}></StyleBsSuitHeartFill>
     </div>
   );
 };

@@ -79,11 +79,6 @@
         "T12":"網購優惠價:$24000",
         "T13":"門市破盤價:$23000",
         "T14":"省了多少:$2000"
-      },
-      "picture":{
-        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
-        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
-        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
       }
     }
     ,
@@ -104,11 +99,6 @@
         "T12":"網購優惠價:$25,989",
         "T13":"門市破盤價:$24,990",
         "T14":"省了多少:$3000"
-      },
-      "picture":{
-        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
-        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
-        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
       }
     }
     ,
@@ -129,20 +119,132 @@
         "T12":"網購優惠價:$25,989",
         "T13":"門市破盤價:$24,990",
         "T14":"省了多少:$3000"
-      },
-      "picture":{
-        "white1":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
-        "white2":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
-        "white3":"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902"
       }
-    }]
-    ,[]
+    }
+    , 
+    {
+      "colorlist":[
+        "blue",
+        "purple",
+        "black",
+        "white",
+        "red"
+      ],
+      "picture":[
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026582322",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026557923",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-blue_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026704198",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027205808",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027154835",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027358341",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026579503",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026536100",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-midnight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661026699747",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027204398",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027152840",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027338902",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027205642",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027161721",
+        "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027370210"
+      ],
+      "seriespicture":[
+        "https://www.jyes.com.tw/data/goods/gallery/202211/1667263827811476135.jpg",
+        "https://www.jyes.com.tw/data/goods/gallery/202209/1662600309631600994.jpg",
+        "https://www.jyes.com.tw/data/goods/gallery/202209/1662599047810565959.jpg"
+      ]
+    }
+  ],
+  [{
+    "phone":"APPLE IPHONE 14 PLUS 128G",
+    "texts": {
+      "T1":"上市日期:2021/09",
+      "T2":"作業系統:iOS 15",
+      "T3":"通訊類型:5G+4G",
+      "T4":"SIM卡規格:nano/雙卡",
+      "T5":"處理器:Apple A15",
+      "T6":"ROM:128G",
+      "T7":"螢幕規格:6.1 吋/Retina XDR",
+      "T8":"電池容量:3227 mAh",
+      "T9":"前相機:1200萬",
+      "T10":"後相機:1200+1200萬",
+      "T11":"原廠建議售價:$25000",
+      "T12":"網購優惠價:$24000",
+      "T13":"門市破盤價:$23000",
+      "T14":"省了多少:$2000"
+    }
+  }
+  ,
+  {
+    "phone":"APPLE IPHONE 14 PLUS 256G",
+    "texts": {
+      "T1":"上市日期:2022/09",
+      "T2":"作業系統:iOS 16",
+      "T3":"通訊類型:5G",
+      "T4":"SIM卡規格:nano/雙卡",
+      "T5":"處理器:Apple A15",
+      "T6":"ROM:128G",
+      "T7":"螢幕規格:6.1 吋/Retina XDR",
+      "T8":"電池容量:3279 mAh",
+      "T9":"前相機:1200萬",
+      "T10":"後相機:1200+1200萬",
+      "T11":"原廠建議售價:$27,900",
+      "T12":"網購優惠價:$25,989",
+      "T13":"門市破盤價:$24,990",
+      "T14":"省了多少:$3000"
+    }
+  }
+  ,
+  {
+    "phone":"APPLE IPHONE 14 PLUS 512G",
+    "texts": {
+      "T1":"上市日期:2022/09",
+      "T2":"作業系統:iOS 16",
+      "T3":"通訊類型:5G",
+      "T4":"SIM卡規格:nano/雙卡",
+      "T5":"處理器:Apple A15",
+      "T6":"ROM:128G",
+      "T7":"螢幕規格:6.1 吋/Retina XDR",
+      "T8":"電池容量:3279 mAh",
+      "T9":"前相機:1200萬",
+      "T10":"後相機:1200+1200萬",
+      "T11":"原廠建議售價:$27,900",
+      "T12":"網購優惠價:$25,989",
+      "T13":"門市破盤價:$24,990",
+      "T14":"省了多少:$3000"
+    }
+  }
+  , 
+  {
+    "picture":[
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027942322",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027875106",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-blue_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661028265567",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-starlight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027935971",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-starlight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027829296",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-starlight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661028229167",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-midnight?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027925267",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-midnight_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027825927",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-7inch-midnight_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661028248718",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027205808",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027154835",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-purple_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027358341",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027205642",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red_AV1?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027161721",
+    "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red_AV2?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1661027370210"
+    ],
+    "seriespicture":[
+      "https://www.jyes.com.tw/data/goods/gallery/202211/1667263827811476135.jpg",
+      "https://www.jyes.com.tw/data/goods/gallery/202209/1662600309631600994.jpg",
+      "https://www.jyes.com.tw/data/goods/gallery/202209/1662599047810565959.jpg"
+    ]
+  }
+]
   ],
   "sliderPic": [
     {
       "pic":[
       "https://www.jyes.com.tw/data/adv/202212/1670468541216624809.jpg",
-      "https://www.jyes.com.tw/data/adv/202212/1670465233028186150.jpg",
+      "https://www.jyes.com.tw/data/adv/202212/1670810273543913900.jpg",
       "https://www.jyes.com.tw/data/adv/202212/1670465279862829107.jpg",
       "https://www.jyes.com.tw/data/adv/202211/1669686562316715981.jpg",
       "https://www.jyes.com.tw/data/adv/202212/1669857524927971273.jpg"

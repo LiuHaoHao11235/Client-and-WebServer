@@ -10,6 +10,7 @@ const DetailWarp = styled.div`
 `;
 const Detail = () => {
   const [searchParams] = useSearchParams();
+  const PhoneSeries = searchParams.get("productseries");
   const PhoneIndex = searchParams.get("index");
   const TotatalSequence = searchParams.get("totatalsequence");
   return (
@@ -17,6 +18,7 @@ const Detail = () => {
       <DetailCard
         index={PhoneIndex}
         TotatalSequence={TotatalSequence}
+        PhoneSeries={PhoneSeries}
       ></DetailCard>
     </DetailWarp>
   );

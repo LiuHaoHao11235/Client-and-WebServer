@@ -62,7 +62,11 @@ class Home extends Component {
         <HomeWrapper>
           <HomeBannerSection>
             <MainHomeBanner>
-              <Slider checkbox={true} auto={8000}></Slider>
+              <Slider
+                checkbox={true}
+                auto={8000}
+                url={"http://localhost:5000/sliderPic"}
+              ></Slider>
             </MainHomeBanner>
             <SubHomeBanner>
               <img src={pic6} className="sub-banner-picture" alt="pic6"></img>

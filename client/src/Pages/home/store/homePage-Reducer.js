@@ -1,3 +1,15 @@
+// import { createAction, createReducer } from "@reduxjs/toolkit";
+// const increment = createAction("INCREMENT");
+// const decrement = createAction("DECREMENT",payload);
+// const counter = createReducer(0, {
+//   [increment.type]: (state) => state + 1,
+//   [decrement.type]: (state) => state - 1,
+// });
+// export const addTodo = createAction('ADD_TODO', text => {
+//   return {
+//     payload: { id: nextTodoId++, text }
+//   }
+// })
 const defaultState = {
   commoditylist: [],
   height: 3250,

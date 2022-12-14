@@ -26,6 +26,7 @@ export default class Slider extends PureComponent {
     this.handle_click_right_button = this.handle_click_right_button.bind(this);
     this.autoslideright = this.autoslideright.bind(this);
   }
+
   render() {
     return (
       <Slideul className="slides">
@@ -104,15 +105,33 @@ export default class Slider extends PureComponent {
   }
   componentDidMount() {
     console.log("載入Slider組件");
-    this.loadPicture();
-    auto = setInterval(this.autoslideright, this.props.auto || 10000);
+    if (this.props.url) {
+      this.loadPicture();
+    }
+    if (this.props.picture) {
+      this.setState({
+        PicsList: this.props.picture,
+      });
+    }
+    if (this.props.auto) {
+      auto = setInterval(this.autoslideright, this.props.auto || 10000);
+    } else if (!this.props.auto) {
+      auto = null;
+    }
   }
   componentDidUpdate() {
     //console.log("更新Slider組件");
     if (this.state.autoslide === false) {
       //!類似hook概念
-      clearInterval(auto);
-      auto = setInterval(this.autoslideright, this.props.auto || 10000);
+      if (auto) {
+        clearInterval(auto);
+        auto = setInterval(this.autoslideright, this.props.auto || 10000);
+      }
+    }
+    if (this.props.picture && this.props.picture !== this.state.PicsList) {
+      this.setState({
+        PicsList: this.props.picture,
+      });
     }
   }
   componentWillUnmount() {
@@ -121,7 +140,7 @@ export default class Slider extends PureComponent {
   }
   loadPicture() {
     axios
-      .get(`http://localhost:5000/sliderPic`)
+      .get(this.props.url)
       .then((response) => {
         this.setState({
           PicsList: response.data[0].pic,
@@ -138,7 +157,7 @@ export default class Slider extends PureComponent {
     });
   }
   handle_click_left_button() {
-    const currentRadio = this.state.radio.slice(1) % 5;
+    const currentRadio = this.state.radio.slice(1) % this.state.PicsList.length;
     if (currentRadio === "0") {
       this.setState({
         radio: "R1",
@@ -151,14 +170,14 @@ export default class Slider extends PureComponent {
   handle_click_right_button() {
     const currentRadio = this.state.radio.slice(1);
     if (currentRadio === "1") {
-      this.setState({ radio: "R5" });
+      this.setState({ radio: "R" + this.state.PicsList.length });
     } else {
       this.setState({ radio: "R" + (currentRadio - 1) });
     }
     this.setState({ autoslide: false });
   }
   autoslideright() {
-    const currentRadio = this.state.radio.slice(1) % 5;
+    const currentRadio = this.state.radio.slice(1) % this.state.PicsList.length;
     if (currentRadio === "0") {
       this.setState({ radio: "R1" });
     } else {
