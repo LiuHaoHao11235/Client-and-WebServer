@@ -130,42 +130,45 @@ const Text = styled.span`
 //   );
 // };
 
-const useUsers = () => {
+const useUsers = (props) => {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
       type: "PRODUCT_IS_LOADING",
     });
-    setTimeout(() => {
-      axios
-        .get(`http://localhost:5000/PhonesDetail`)
-        .then((res) => {
-          setUsers(res.data);
-          dispatch({
-            type: "PRODUCT_IS_LOADED",
-          });
-        })
-        .catch((err) => console.log(err));
-    }, 2000);
+    axios
+      .get(`http://localhost:5000/PhonesDetail`)
+      .then((res) => {
+        setUsers(res.data);
+        dispatch({
+          type: "PRODUCT_IS_LOADED",
+        });
+        dispatch({
+          type: "REFETCH_SPECIFICATION",
+          ProductSpecification: {
+            color: res.data[props.TotatalSequence]?.[3].colorlist[0],
+            rom: res.data[props.TotatalSequence]?.[props.index].rom,
+            ColorIndex: 0,
+          },
+        });
+      })
+      .catch((err) => console.log(err));
   }, [dispatch]);
   return { users };
 };
 const DetailCard = (props) => {
-  const ProductIndex = useSelector((state) => state.addcart.ProductIndex);
+  var ProductIndex = useSelector((state) => state.addcart.ProductIndex);
+  if (ProductIndex === "") {
+    ProductIndex = props.index;
+  }
   const ColorIndex = useSelector(
     (state) => state.addcart.ProductSpecification.ColorIndex
   );
-  const dispatch = useDispatch();
   const TotatalSequence = props.TotatalSequence;
-  const { users } = useUsers();
+  const { users } = useUsers(props);
   const arrayOfAllText = [];
   var arrayOfPrice = [];
-  useEffect(() => {
-    dispatch({
-      type: "RESET_SPECIFICATION",
-    });
-  }, [props]);
   if (users[TotatalSequence]?.[ProductIndex]) {
     // console.log(users[TotatalSequence][index]);
     Object.keys(users[TotatalSequence][ProductIndex].texts).forEach(function (

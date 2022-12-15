@@ -64,6 +64,7 @@
   "PhonesDetail": [
     [{
       "phone":"APPLE IPHONE 14 128G",
+      "rom":"128G",
       "texts": {
         "T1":"上市日期:2021/09",
         "T2":"作業系統:iOS 15",
@@ -84,6 +85,7 @@
     ,
     {
       "phone":"APPLE IPHONE 14 256G",
+      "rom":"256G",
       "texts": {
         "T1":"上市日期:2022/09",
         "T2":"作業系統:iOS 16",
@@ -104,6 +106,7 @@
     ,
     {
       "phone":"APPLE IPHONE 14 512G",
+      "rom":"512G",
       "texts": {
         "T1":"上市日期:2022/09",
         "T2":"作業系統:iOS 16",

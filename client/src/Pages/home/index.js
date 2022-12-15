@@ -370,4 +370,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-// json-server --watch db.json --port 8000
+// json-server --watch db.json --port 5000

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Table, Form, InputNumber, Popconfirm, Typography } from "antd";
+import "./style.css";
 const EditableCell = ({
   editing,
   dataIndex,
@@ -95,28 +96,32 @@ const ShopList = () => {
       {
         title: "商品名稱",
         dataIndex: "name",
-        width: "25%",
+        width: "20%",
       },
       {
         title: "商品規格",
         dataIndex: "Specification",
-        width: "25%",
+        width: "30%",
+        align: "center",
       },
       {
         title: "商品價格",
         dataIndex: "price",
         width: "15%",
+        align: "center",
       },
       {
         title: "購買數量",
         dataIndex: "number",
         width: "15%",
+        align: "center",
         editable: true,
       },
       {
         title: "編輯商品數量",
         dataIndex: "編輯商品數量",
         width: "20%",
+        align: "center",
         render: (_, record) => {
           const editable = isEditing(record);
           return editable ? (
@@ -210,7 +215,7 @@ const ShopList = () => {
           position: "absolute",
           top: 65,
           right: -100,
-          width: "650px",
+          width: "800px",
           background: "white",
           zIndex: 10,
         }}
@@ -262,6 +267,7 @@ const ShopList = () => {
           rowSelection={rowSelection}
           columns={mergedColumns}
           dataSource={itemList}
+          rowClassName="TableRowClass"
         />
       </div>
     </Form>

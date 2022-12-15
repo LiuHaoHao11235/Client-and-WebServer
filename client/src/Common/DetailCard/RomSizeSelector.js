@@ -3,10 +3,11 @@ import { useDispatch } from "react-redux";
 
 const RomSizeSelector = () => {
   const dispatch = useDispatch();
-  const handleChange = (value) => {
+  const handleChange = (value, options) => {
     dispatch({
       type: "SET_PRODUCT_INDEX",
       ProductIndex: value,
+      rom: options.label,
     });
   };
   return (

@@ -4,14 +4,14 @@ const PRODUCT_IS_LOADING = "PRODUCT_IS_LOADING";
 const DELETE_PRODUCT_FROM_SHOPLIST = "DELETE_PRODUCT_FROM_SHOPLIST";
 const EDIT_PRODUCT_FROM_SHOPLIST = "EDIT_PRODUCT_FROM_SHOPLIST";
 const SELECT_PHONE_COLOR = "SELECT_PHONE_COLOR";
-const RESET_SPECIFICATION = "RESET_SPECIFICATION";
+const REFETCH_SPECIFICATION = "REFETCH_SPECIFICATION";
 const SET_PRODUCT_INDEX = "SET_PRODUCT_INDEX";
 const initState = {
   CartList: [],
   ProductInCartList: [],
   Product_Loading_State: true,
   ProductSpecification: { color: "", rom: "128G", ColorIndex: 0 },
-  ProductIndex: 0,
+  ProductIndex: "",
 };
 const filterArr = (arr1, arr2) => {
   const arr = [...arr1, ...arr2];
@@ -23,12 +23,13 @@ const filterArr = (arr1, arr2) => {
 const AddCartReducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_CART_LIST: {
+      const ProductName = action.name + state.ProductSpecification.color;
       const newState = JSON.parse(JSON.stringify(state));
       const CheckOutProductInCartList = () => {
         var checkoutstate = [false, newState.ProductInCartList.length];
         newState.ProductInCartList.forEach((ProductInCart, index) => {
           // console.log("ProductInCart", ProductInCart);
-          if (ProductInCart === action.name) {
+          if (ProductInCart === ProductName) {
             checkoutstate = [true, index];
           }
         });
@@ -37,18 +38,18 @@ const AddCartReducer = (state = initState, action) => {
       const checkOutState = CheckOutProductInCartList();
       // console.log(checkOutState);
       if (checkOutState[0]) {
-        console.log(`${action.name}商品已經在購物車中`);
+        console.log(`${ProductName}商品已經在購物車中`);
         newState.CartList[checkOutState[1]].number++;
       } else if (!checkOutState[0]) {
-        console.log(`${action.name}商品第一次入購物車中`);
+        console.log(`${ProductName}商品第一次入購物車中`);
         const productDetail = {
           key: checkOutState[1],
-          name: action.name,
-          Specification: `123464`,
+          name: action.name.slice(0, -4),
+          Specification: `顏色:${state.ProductSpecification.color} 容量:${state.ProductSpecification.rom}`,
           price: action.price,
           number: 1,
         };
-        newState.ProductInCartList.push(action.name);
+        newState.ProductInCartList.push(ProductName);
         newState.CartList.push(productDetail);
       }
       return newState;
@@ -93,18 +94,17 @@ const AddCartReducer = (state = initState, action) => {
       newState.ProductSpecification.ColorIndex = action.ColorIndex;
       return newState;
     }
-    case RESET_SPECIFICATION: {
+    case REFETCH_SPECIFICATION: {
       const newState = JSON.parse(JSON.stringify(state));
-      newState.ProductSpecification = {
-        color: "white",
-        rom: "128G",
-        ColorIndex: 0,
-      };
+      newState.ProductSpecification = action.ProductSpecification;
+      newState.ProductIndex = "";
+      console.log("重新FETCH商品規格", action.ProductSpecification);
       return newState;
     }
     case SET_PRODUCT_INDEX: {
       const newState = JSON.parse(JSON.stringify(state));
       newState.ProductIndex = action.ProductIndex;
+      newState.ProductSpecification.rom = action.rom;
       return newState;
     }
     default:
