@@ -15,7 +15,7 @@ import pic9 from "../../Statices/pic9.jpg";
 import pic10 from "../../Statices/pic10.jpg";
 import { Link } from "react-router-dom";
 import JumpButton from "./component/JumpButton";
-import Slider from "../../Common/Slider/Slider";
+import Slider from "../../Common/Slider/index";
 import LoadmoreIcon from "./component/LoadmoreIcon";
 import axios from "axios";
 import Button from "../../Common/Button/index";
@@ -207,7 +207,7 @@ class Home extends Component {
                       </span>
                     </Commodityprize>
                     <Link
-                      to={`/detail/product?productseries=${commodity.productseries}&totatalsequence=${commodity.totatalsequence}&index=${commodity.index}`}
+                      to={`/detail/?productseries=${commodity.productseries}&totatalsequence=${commodity.totatalsequence}&index=${commodity.index}`}
                     >
                       <button className="productbotton">詳情</button>
                     </Link>

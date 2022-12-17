@@ -7,7 +7,7 @@ import { ColorSelctor } from "./ColorSelector";
 import { Favorite } from "./Favorite";
 import { AddCart } from "./Carts";
 import { useSelector, useDispatch } from "react-redux";
-import Slider from "../Slider/Slider";
+import Slider from "../../../Common/Slider/index";
 const CardBody = styled.div`
   width: 1280px;
   height: 100vh;
@@ -154,10 +154,11 @@ const useUsers = (props) => {
         });
       })
       .catch((err) => console.log(err));
-  }, [dispatch]);
+  }, [props, dispatch]);
   return { users };
 };
-const DetailCard = (props) => {
+const MainSection = (props) => {
+  console.log("rerender MainSection");
   var ProductIndex = useSelector((state) => state.addcart.ProductIndex);
   if (ProductIndex === "") {
     ProductIndex = props.index;
@@ -326,4 +327,4 @@ const DetailCard = (props) => {
   );
 };
 
-export default DetailCard;
+export default MainSection;

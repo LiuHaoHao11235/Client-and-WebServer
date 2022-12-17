@@ -98,7 +98,7 @@ const AddCartReducer = (state = initState, action) => {
       const newState = JSON.parse(JSON.stringify(state));
       newState.ProductSpecification = action.ProductSpecification;
       newState.ProductIndex = "";
-      console.log("重新FETCH商品規格", action.ProductSpecification);
+      console.log("重新取得商品規格", action.ProductSpecification);
       return newState;
     }
     case SET_PRODUCT_INDEX: {

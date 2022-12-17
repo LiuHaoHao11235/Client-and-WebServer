@@ -1,10 +1,13 @@
-import DetailCard from "../../Common/DetailCard/index";
 import styled from "styled-components";
 import { useSearchParams } from "react-router-dom";
+import MainSection from "./component/MainSection";
+
+import MoreSection from "./component/MoreSection";
 const DetailWarp = styled.div`
   width: 1920px;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -15,11 +18,12 @@ const Detail = () => {
   const TotatalSequence = searchParams.get("totatalsequence");
   return (
     <DetailWarp>
-      <DetailCard
+      <MainSection
         index={PhoneIndex}
         TotatalSequence={TotatalSequence}
         PhoneSeries={PhoneSeries}
-      ></DetailCard>
+      ></MainSection>
+      <MoreSection></MoreSection>
     </DetailWarp>
   );
 };

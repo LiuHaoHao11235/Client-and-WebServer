@@ -1,0 +1,10 @@
+.TableRowClass{
+    text-align: center;
+    font-weight: 500;
+}
+.DetailCardBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

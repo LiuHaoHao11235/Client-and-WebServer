@@ -17,7 +17,7 @@ import {
 import { HiUserCircle } from "react-icons/hi";
 import { CSSTransition } from "react-transition-group";
 import ShowSearchInfo from "./component/SearchInfo";
-import { Cart } from "../DetailCard/Carts";
+import { Cart } from "../../Pages/detail/component/Carts";
 import {
   Headersection,
   HeaderWrapper,
