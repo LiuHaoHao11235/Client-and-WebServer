@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useSearchParams } from "react-router-dom";
 import MainSection from "./component/MainSection";
-
+import { useEffect } from "react";
 import MoreSection from "./component/MoreSection";
 const DetailWarp = styled.div`
   width: 1920px;
@@ -12,6 +12,9 @@ const DetailWarp = styled.div`
   align-items: center;
 `;
 const Detail = () => {
+  useEffect(() => {
+    window.scrollTo(0, 80);
+  }, []);
   const [searchParams] = useSearchParams();
   const PhoneSeries = searchParams.get("productseries");
   const PhoneIndex = searchParams.get("index");

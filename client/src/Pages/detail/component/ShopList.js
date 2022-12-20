@@ -152,23 +152,19 @@ const ShopList = () => {
   });
 
   const DeleteItem = (selectedProductList) => {
-    setTimeout(() => {
-      setItemList((prevItemList) => {
-        selectedRowKey.forEach((selectedKey) => {
-          prevItemList.forEach((Item) => {
-            if (Item.key === selectedKey) {
-              selectedProductList.push(Item.name);
-              prevItemList = prevItemList.filter(function (item) {
-                return item !== Item;
-              });
-              return;
-            }
-          });
-        });
-        const newItemList = [...prevItemList];
+    var newItemList = [...itemList];
+    selectedRowKey.forEach((selectedKey) => {
+      itemList.forEach((Item) => {
+        if (Item.key === selectedKey) {
+          selectedProductList.push(Item.fullname);
+          newItemList.splice(newItemList.indexOf(Item), 1);
+        }
+      });
+      setItemList(() => {
         return newItemList;
       });
     });
+    // console.log("Shoplist newItemList", newItemList);
   };
   const start = () => {
     const selectedProductList = [];
@@ -178,14 +174,14 @@ const ShopList = () => {
       dispatch({
         type: "DELETE_PRODUCT_FROM_SHOPLIST",
         selectedProductList: selectedProductList,
-        selectedRowIndex: selectedRowKey,
+        selectedRowKey: selectedRowKey,
       });
       setSelectedRowKey([]);
       setLoading(false);
     }, 1000);
   };
   const onSelectChange = (newSelectedRowIndex) => {
-    console.log("selectedRowIndex", newSelectedRowIndex.sort());
+    // console.log("selectedRowIndex", newSelectedRowIndex.sort());
     setSelectedRowKey(newSelectedRowIndex.sort());
   };
   const rowSelection = {

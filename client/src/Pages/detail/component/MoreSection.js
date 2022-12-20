@@ -10,6 +10,10 @@ const SelectButton = styled.button`
   font-weight: 600;
   font-size: 24px;
   color: white;
+  &:hover {
+    background-color: gold;
+    color: black;
+  }
 `;
 const WarpSelectButton = styled.div`
   width: 100%;

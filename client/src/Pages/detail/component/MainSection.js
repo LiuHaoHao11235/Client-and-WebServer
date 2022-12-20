@@ -137,23 +137,25 @@ const useUsers = (props) => {
     dispatch({
       type: "PRODUCT_IS_LOADING",
     });
-    axios
-      .get(`http://localhost:5000/PhonesDetail`)
-      .then((res) => {
-        setUsers(res.data);
-        dispatch({
-          type: "PRODUCT_IS_LOADED",
-        });
-        dispatch({
-          type: "REFETCH_SPECIFICATION",
-          ProductSpecification: {
-            color: res.data[props.TotatalSequence]?.[3].colorlist[0],
-            rom: res.data[props.TotatalSequence]?.[props.index].rom,
-            ColorIndex: 0,
-          },
-        });
-      })
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      axios
+        .get(`http://localhost:5000/PhonesDetail`)
+        .then((res) => {
+          setUsers(res.data);
+          dispatch({
+            type: "PRODUCT_IS_LOADED",
+          });
+          dispatch({
+            type: "REFETCH_SPECIFICATION",
+            ProductSpecification: {
+              color: res.data[props.TotatalSequence]?.[3].colorlist[0],
+              rom: res.data[props.TotatalSequence]?.[props.index].rom,
+              ColorIndex: 0,
+            },
+          });
+        })
+        .catch((err) => console.log(err));
+    }, 1000);
   }, [props, dispatch]);
   return { users };
 };

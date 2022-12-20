@@ -14,10 +14,20 @@ const initState = {
   ProductIndex: "",
 };
 const filterArr = (arr1, arr2) => {
-  const arr = [...arr1, ...arr2];
-  const newArr = arr.filter((t) => {
-    return !(arr1.includes(t) && arr2.includes(t));
-  });
+  const Arr = [...new Set([...arr1, ...arr2])];
+  const newArr = [];
+  for (var i = 0; i < Arr.length; i++) {
+    var repeat = false;
+    for (var j = 0; j < arr2.length; j++) {
+      if (Arr[i] === arr2[j]) {
+        repeat = true;
+        break;
+      }
+    }
+    if (!repeat) {
+      newArr.push(Arr[i]);
+    }
+  }
   return newArr;
 };
 const AddCartReducer = (state = initState, action) => {
@@ -38,16 +48,17 @@ const AddCartReducer = (state = initState, action) => {
       const checkOutState = CheckOutProductInCartList();
       // console.log(checkOutState);
       if (checkOutState[0]) {
-        console.log(`${ProductName}商品已經在購物車中`);
+        // console.log(`${ProductName}商品已經在購物車中`);
         newState.CartList[checkOutState[1]].number++;
       } else if (!checkOutState[0]) {
-        console.log(`${ProductName}商品第一次入購物車中`);
+        // console.log(`${ProductName}商品第一次入購物車中`);
         const productDetail = {
           key: checkOutState[1],
           name: action.name.slice(0, -4),
           Specification: `顏色:${state.ProductSpecification.color} 容量:${state.ProductSpecification.rom}`,
           price: action.price,
           number: 1,
+          fullname: ProductName,
         };
         newState.ProductInCartList.push(ProductName);
         newState.CartList.push(productDetail);
@@ -70,17 +81,16 @@ const AddCartReducer = (state = initState, action) => {
         newState.ProductInCartList,
         action.selectedProductList
       );
-
       newState.ProductInCartList = newProductInCartList;
-      // console.log("selectedRowIndex為", action.selectedRowIndex);
-      action.selectedRowIndex.forEach((selectedIndex, index) => {
-        console.log(
-          "刪除清單資料!!!",
-          newState.CartList[selectedIndex - index]
-        );
-        newState.CartList.splice(selectedIndex - index, 1);
+      action.selectedRowKey.forEach((selectedKey) => {
+        for (var i = 0; i < newState.CartList.length; i++) {
+          if (newState.CartList[i].key === selectedKey) {
+            newState.CartList.splice(i, 1);
+          }
+        }
       });
-
+      // console.log("Reducer newProductInCartList", newProductInCartList);
+      // console.log("Reducer CartList", newState.CartList);
       return newState;
     }
     case EDIT_PRODUCT_FROM_SHOPLIST: {

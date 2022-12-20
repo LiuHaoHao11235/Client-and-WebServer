@@ -25,28 +25,9 @@ const Card = () => {
         >
           清除所有sessionStorage;
         </button>
-
-        // <div key={users[0].userID}>
-        //   <h1>costum hook</h1>
-        //   <h3>this is {users[0].userID}</h3>
-        //   <div>{users[0].data.phone}</div>
-        // </div>
       }
     </CardBody>
   );
 };
-// const useUsers = () => {
-//   const [users, setUsers] = useState([]);
-//   useEffect(() => {
-//     setTimeout(() => {
-//       axios
-//         .get(`http://localhost:8000/users`)
-//         .then((res) => {
-//           setUsers(res.data);
-//         })
-//         .catch((err) => console.log(err));
-//     }, 2000);
-//   }, []);
-//   return { users };
-// };
+
 export default Card;

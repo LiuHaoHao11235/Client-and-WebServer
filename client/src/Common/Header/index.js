@@ -223,7 +223,7 @@ class Header extends Component {
   }
   componentDidMount() {
     //獲取一次ajax請求 最好放在這個生命週期函數中 也可以使用componentwillMount()但是在react native或是在其他高級技術上會有錯誤
-    // this.props.firstloaddata();
+    this.props.firstloaddata();
   }
   handleFocus() {
     this.setState({
@@ -293,7 +293,7 @@ const mapDispatchTostate = (dispatch) => {
       const action = function (dispatch) {
         //!因為thunk讓我可以action可以是function型態
         axios
-          .get(`http://localhost:8000/TOP_phones`)
+          .get(`http://localhost:5000/TOP_phones`)
           .then((res) =>
             dispatch({
               type: "LOAD_POSTS_SUCCESS",

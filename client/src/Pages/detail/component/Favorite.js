@@ -40,7 +40,7 @@ export const Favorite = () => {
         });
       }}
     >
-      <StyleBsSuitHeartFill $islike={islike}></StyleBsSuitHeartFill>
+      <StyleBsSuitHeartFill islike={islike}></StyleBsSuitHeartFill>
     </div>
   );
 };
