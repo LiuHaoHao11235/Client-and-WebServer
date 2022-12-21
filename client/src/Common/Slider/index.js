@@ -104,7 +104,7 @@ export default class Slider extends PureComponent {
     );
   }
   componentDidMount() {
-    console.log("載入Slider組件");
+    // console.log("載入Slider組件");
     if (this.props.url) {
       this.loadPicture();
     }
@@ -120,7 +120,7 @@ export default class Slider extends PureComponent {
     }
   }
   componentDidUpdate() {
-    //console.log("更新Slider組件");
+    // console.log("更新Slider組件");
     if (this.state.autoslide === false) {
       //!類似hook概念
       if (auto) {
@@ -135,7 +135,7 @@ export default class Slider extends PureComponent {
     }
   }
   componentWillUnmount() {
-    console.log("卸載Slider組件");
+    // console.log("卸載Slider組件");
     clearInterval(auto);
   }
   loadPicture() {
@@ -154,6 +154,7 @@ export default class Slider extends PureComponent {
     let id = e.target.id;
     this.setState({
       radio: id,
+      autoslide: false,
     });
   }
   handle_click_left_button() {

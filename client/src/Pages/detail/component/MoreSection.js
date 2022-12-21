@@ -4,15 +4,16 @@ const SelectButton = styled.button`
   width: 200px;
   height: 60px;
   margin-left: 5px;
-  border: none;
+  border: 2px lightgray solid;
+  box-sizing: border-box;
   border-radius: 10px;
-  background-color: lightgray;
   font-weight: 600;
   font-size: 24px;
-  color: white;
+  color: black;
   &:hover {
     background-color: gold;
-    color: black;
+    color: white;
+    border: none;
   }
 `;
 const WarpSelectButton = styled.div`

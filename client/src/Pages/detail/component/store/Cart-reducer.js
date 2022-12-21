@@ -14,18 +14,17 @@ const initState = {
   ProductIndex: "",
 };
 const filterArr = (arr1, arr2) => {
-  const Arr = [...new Set([...arr1, ...arr2])];
   const newArr = [];
-  for (var i = 0; i < Arr.length; i++) {
+  for (var i = 0; i < arr1.length; i++) {
     var repeat = false;
     for (var j = 0; j < arr2.length; j++) {
-      if (Arr[i] === arr2[j]) {
+      if (arr1[i] === arr2[j]) {
         repeat = true;
         break;
       }
     }
     if (!repeat) {
-      newArr.push(Arr[i]);
+      newArr.push(arr1[i]);
     }
   }
   return newArr;

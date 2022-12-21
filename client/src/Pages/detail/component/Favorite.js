@@ -5,9 +5,10 @@ import styled from "styled-components";
 const StyleBsSuitHeartFill = styled(BsSuitHeartFill)`
   font-size: 25px;
   color: ${(props) => {
-    if (props.islike) {
+    if (props.islike === "true") {
       return "red";
-    } else {
+    }
+    if (props.islike === "false") {
       return "grey";
     }
   }};
@@ -40,7 +41,7 @@ export const Favorite = () => {
         });
       }}
     >
-      <StyleBsSuitHeartFill islike={islike}></StyleBsSuitHeartFill>
+      <StyleBsSuitHeartFill islike={islike.toString()}></StyleBsSuitHeartFill>
     </div>
   );
 };
